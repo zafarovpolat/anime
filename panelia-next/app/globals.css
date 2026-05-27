@@ -1716,41 +1716,104 @@ button {
 
 
 /* ==========================================
-   MANGA INNER PAGE (Detail)
+   MANGA INNER PAGE (Detail) — Strict Figma
    ========================================== */
 
 .manga-inner-section {
-  padding-top: 40px;
-  padding-bottom: 60px;
+  background: #f6f6f6;
+  padding-top: 0;
 }
 
 .manga-inner {
   display: flex;
-  gap: 40px;
-  background-color: var(--color-white);
-  border-radius: 25px;
-  padding: 30px;
+  gap: 30px;
+  padding-top: 40px;
+  align-items: flex-start;
+  max-width: 1350px;
+  margin: 0 auto;
 }
 
-/* Cover */
-.manga-inner__cover {
+/* ── Left: Cover Card ── */
+.manga-inner__left {
   flex-shrink: 0;
-  width: 340px;
+  width: 323px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.manga-inner__cover {
+  width: 323px;
+  height: 402px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .manga-inner__cover img {
   width: 100%;
-  border-radius: 20px;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* Info panel */
+.manga-inner__left-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+.manga-inner__read-btn {
+  width: 323px;
+  height: 79px;
+  background: #562CF0;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+
+.manga-inner__read-btn:hover {
+  background: #4620d0;
+}
+
+.manga-inner__bookmark-btn {
+  width: 323px;
+  height: 75px;
+  background: #fff;
+  color: #180F2A;
+  border: none;
+  border-radius: 16px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+
+.manga-inner__bookmark-btn:hover {
+  background: #f3f0ff;
+}
+
+/* ── Right: Info block ── */
 .manga-inner__info {
   flex: 1;
   min-width: 0;
+  position: relative;
 }
 
-/* Genre tags */
 .manga-inner__tags {
   display: flex;
   align-items: center;
@@ -1759,214 +1822,157 @@ button {
 }
 
 .manga-inner__tag {
+  font-family: 'Golos Text', sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  color: var(--color-gray-text);
+  color: #180F2A;
 }
 
 .manga-inner__tag-sep {
+  color: #97989B;
   font-size: 14px;
-  color: var(--color-gray-text);
-}
-
-/* Title + Rating row */
-.manga-inner__title-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-  margin-bottom: 14px;
 }
 
 .manga-inner__title {
-  font-family: var(--font-heading);
-  font-size: 36px;
+  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-size: 32px;
   font-weight: 800;
-  letter-spacing: 1px;
+  color: #180F2A;
   text-transform: uppercase;
-  line-height: 1.15;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.02em;
 }
 
-/* Rating block */
-.manga-inner__rating-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-}
-
-.manga-inner__rating-score {
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--color-black);
-  line-height: 1;
-}
-
-.manga-inner__rating-count {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--color-gray-text);
-  white-space: nowrap;
-}
-
-.manga-inner__rating-btn {
-  margin-top: 6px;
-  padding: 10px 24px;
-  background: var(--color-primary);
-  color: var(--color-white);
-  border: none;
-  border-radius: var(--radius-btn);
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.manga-inner__rating-btn:hover {
-  background: var(--color-primary-hover);
-}
-
-/* Stats row */
 .manga-inner__stats {
   display: flex;
-  gap: 24px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .manga-inner__stat {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--color-gray-text);
+  font-family: 'Golos Text', sans-serif;
+  font-size: 13px;
+  color: #180F2A;
 }
 
-/* Tabs */
+/* Rating block — positioned top-right */
+.manga-inner__rating-block {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.manga-inner__rating-score {
+  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #180F2A;
+  line-height: 1;
+}
+
+.manga-inner__rating-count {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 13px;
+  color: #767676;
+}
+
+.manga-inner__rating-btn {
+  width: 110px;
+  height: 54px;
+  background: #562CF0;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.manga-inner__rating-btn:hover {
+  background: #4620d0;
+}
+
+/* ── Tabs ── */
 .manga-inner__tabs {
   display: flex;
-  border: 1px solid var(--color-gray-light);
-  border-radius: var(--radius-badge);
+  background: #f9f9fa;
+  border-radius: 16px;
   overflow: hidden;
   margin-bottom: 24px;
 }
 
 .manga-inner__tab {
   flex: 1;
-  padding: 14px 20px;
-  font-family: var(--font-body);
+  height: 65px;
+  background: #fff;
+  border: none;
+  font-family: 'Golos Text', sans-serif;
   font-size: 15px;
   font-weight: 500;
-  color: var(--color-gray-text);
-  background: transparent;
-  border: none;
+  color: #180F2A;
   cursor: pointer;
-  transition: color 0.2s, background 0.2s;
-  text-align: center;
-}
-
-.manga-inner__tab:not(:last-child) {
-  border-right: 1px solid var(--color-gray-light);
+  transition: all 0.2s;
+  border-radius: 16px;
 }
 
 .manga-inner__tab--active {
-  color: var(--color-black);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(86, 44, 240, 0.08);
   font-weight: 600;
-  background-color: rgba(86, 44, 240, 0.04);
 }
 
-.manga-inner__tab:hover {
-  color: var(--color-black);
+.manga-inner__tab:hover:not(.manga-inner__tab--active) {
+  background: #f0ecff;
 }
 
-/* Content */
+/* ── Content area ── */
 .manga-inner__content {
-  margin-bottom: 24px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
 }
 
+/* ── Main tab: description ── */
 .manga-inner__description {
-  color: var(--color-gray-text);
-  font-size: 15px;
-  line-height: 1.75;
+  margin-bottom: 30px;
 }
 
 .manga-inner__description p {
-  margin-bottom: 16px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.7;
+  margin: 0 0 16px;
 }
 
 .manga-inner__description p:last-child {
   margin-bottom: 0;
 }
 
-/* Action buttons */
-.manga-inner__actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 40px;
-}
-
-.manga-inner__read-btn {
-  padding: 18px 60px;
-  background: var(--color-primary);
-  color: var(--color-white);
-  border: none;
-  border-radius: var(--radius-btn);
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-}
-
-.manga-inner__read-btn:hover {
-  background: var(--color-primary-hover);
-}
-
-.manga-inner__read-btn:active {
-  transform: scale(0.97);
-}
-
-.manga-inner__bookmark-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 20px;
-  background: transparent;
-  border: none;
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--color-black);
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.manga-inner__bookmark-btn:hover {
-  opacity: 0.7;
-}
-
-/* New chapters */
+/* New chapters grid */
 .manga-inner__new-chapters {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .manga-inner__new-chapters-title {
+  font-family: 'SONGER SemiExpanded', sans-serif;
   font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 16px;
+  font-weight: 800;
+  color: #180F2A;
+  text-transform: uppercase;
+  margin: 0 0 16px;
 }
 
 .manga-inner__chapters-grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 10px;
-}
-
-.manga-inner__chapters-full {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 10px;
@@ -1977,714 +1983,1132 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 18px 10px;
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-light);
-  border-radius: var(--radius-badge);
+  background: #f9f9fa;
+  border-radius: 12px;
+  padding: 16px 10px;
   text-decoration: none;
-  color: inherit;
-  transition: border-color 0.2s, background 0.2s;
+  transition: background 0.2s;
 }
 
 .manga-inner__chapter-card:hover {
-  border-color: var(--color-primary);
-  background: rgba(86, 44, 240, 0.03);
+  background: #f0ecff;
 }
 
 .manga-inner__chapter-num {
-  font-size: 22px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1;
+  color: #180F2A;
 }
 
 .manga-inner__chapter-label {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--color-gray-text);
-  margin-top: 4px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 12px;
+  color: #97989B;
+  margin-top: 2px;
 }
 
-/* ---- Manga Inner Responsive ---- */
-
-@media (max-width: 1280px) {
-  .manga-inner__cover {
-    width: 300px;
-  }
-
-  .manga-inner__title {
-    font-size: 30px;
-  }
-
-  .manga-inner__chapters-grid,
-  .manga-inner__chapters-full {
-    grid-template-columns: repeat(6, 1fr);
-  }
+/* ── Chapters tab ── */
+.manga-inner__chapters-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-@media (max-width: 1024px) {
-  .manga-inner {
-    gap: 30px;
-    padding: 24px;
-  }
-
-  .manga-inner__cover {
-    width: 250px;
-  }
-
-  .manga-inner__title {
-    font-size: 26px;
-  }
-
-  .manga-inner__rating-score {
-    font-size: 28px;
-  }
-
-  .manga-inner__chapters-grid,
-  .manga-inner__chapters-full {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  .manga-inner__read-btn {
-    padding: 16px 45px;
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .manga-inner-section {
-    padding-top: 25px;
-    padding-bottom: 40px;
-  }
-
-  .manga-inner {
-    flex-direction: column;
-    gap: 24px;
-    padding: 20px;
-  }
-
-  .manga-inner__cover {
-    width: 100%;
-    max-width: 260px;
-    margin: 0 auto;
-  }
-
-  .manga-inner__title-row {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .manga-inner__rating-block {
-    flex-direction: row;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .manga-inner__rating-score {
-    font-size: 30px;
-  }
-
-  .manga-inner__title {
-    font-size: 24px;
-  }
-
-  .manga-inner__stats {
-    gap: 16px;
-  }
-
-  .manga-inner__description {
-    font-size: 14px;
-  }
-
-  .manga-inner__chapters-grid,
-  .manga-inner__chapters-full {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .manga-inner__read-btn {
-    padding: 14px 36px;
-    font-size: 15px;
-  }
-
-  .manga-inner__actions {
-    margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 540px) {
-  .manga-inner-section {
-    padding-top: 16px;
-    padding-bottom: 30px;
-  }
-
-  .manga-inner {
-    padding: 14px;
-    border-radius: 18px;
-    gap: 18px;
-  }
-
-  .manga-inner__cover {
-    max-width: 200px;
-  }
-
-  .manga-inner__cover img {
-    border-radius: 14px;
-  }
-
-  .manga-inner__title {
-    font-size: 20px;
-  }
-
-  .manga-inner__rating-score {
-    font-size: 26px;
-  }
-
-  .manga-inner__rating-btn {
-    padding: 8px 18px;
-    font-size: 13px;
-  }
-
-  .manga-inner__stats {
-    gap: 12px;
-    margin-bottom: 18px;
-  }
-
-  .manga-inner__stat {
-    font-size: 13px;
-  }
-
-  .manga-inner__tabs {
-    margin-bottom: 18px;
-    border-radius: 12px;
-  }
-
-  .manga-inner__tab {
-    padding: 12px 10px;
-    font-size: 13px;
-  }
-
-  .manga-inner__description {
-    font-size: 13px;
-    line-height: 1.65;
-  }
-
-  .manga-inner__actions {
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .manga-inner__read-btn {
-    width: 100%;
-    padding: 16px;
-    font-size: 15px;
-  }
-
-  .manga-inner__bookmark-btn {
-    justify-content: center;
-  }
-
-  .manga-inner__chapters-grid,
-  .manga-inner__chapters-full {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-  }
-
-  .manga-inner__chapter-card {
-    padding: 14px 6px;
-    border-radius: 12px;
-  }
-
-  .manga-inner__chapter-num {
-    font-size: 18px;
-  }
-
-  .manga-inner__chapter-label {
-    font-size: 11px;
-  }
-
-  .manga-inner__new-chapters-title {
-    font-size: 16px;
-    margin-bottom: 12px;
-  }
-}
-
-/* ==========================================
-   PROFILE PAGE
-   ========================================== */
-
-.profile-section {
-  padding-top: 40px;
-  padding-bottom: 60px;
-}
-
-/* Profile Card */
-.profile-card {
-  background: var(--color-white);
-  border-radius: 25px;
-  padding: 30px;
-  margin-bottom: 24px;
-}
-
-.profile-card__header {
+.manga-inner__chapters-search {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.profile-card__avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: #F4F7FB;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.profile-card__info {
-  flex: 1;
-  min-width: 0;
-}
-
-.profile-card__name {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.profile-card__email {
+  gap: 10px;
+  font-family: 'Golos Text', sans-serif;
   font-size: 14px;
-  color: var(--color-gray-text);
+  color: #97989B;
 }
 
-.profile-card__actions-top {
+.manga-inner__chapters-reverse {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  color: #180F2A;
+  cursor: pointer;
+}
+
+.manga-inner__chapters-reverse:hover {
+  color: #562CF0;
+}
+
+.manga-inner__chapters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.manga-inner__chapter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9fa;
+  border-radius: 12px;
+  padding: 0 24px;
+  height: 92px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.manga-inner__chapter-row:hover {
+  background: #f0ecff;
+}
+
+.manga-inner__chapter-row-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.manga-inner__chapter-row-vol {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #180F2A;
+}
+
+.manga-inner__chapter-row-ch {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #180F2A;
+}
+
+.manga-inner__chapter-row-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.manga-inner__chapter-row-date {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 13px;
+  color: #97989B;
+}
+
+.manga-inner__chapter-row-views {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 13px;
+  color: #97989B;
+}
+
+/* ── Reviews/Comments tab ── */
+.manga-inner__comments-title {
+  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #180F2A;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.manga-inner__comments-title span {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #97989B;
+  margin-left: 8px;
+}
+
+.manga-inner__comment-input {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-shrink: 0;
+  margin-bottom: 24px;
 }
 
-.profile-card__settings-btn {
-  width: 44px;
-  height: 44px;
+.manga-inner__comment-input input {
+  flex: 1;
+  height: 48px;
+  border: 1px solid #e5e5e5;
   border-radius: 12px;
-  background: #F4F7FB;
+  padding: 0 16px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  color: #180F2A;
+  outline: none;
+}
+
+.manga-inner__comment-input input::placeholder {
+  color: #97989B;
+}
+
+.manga-inner__comment-input input:focus {
+  border-color: #562CF0;
+}
+
+.manga-inner__comment-send {
+  width: 48px;
+  height: 48px;
+  background: #562CF0;
   border: none;
+  border-radius: 12px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  flex-shrink: 0;
   transition: background 0.2s;
 }
 
-.profile-card__settings-btn:hover {
-  background: #E8EBF0;
+.manga-inner__comment-send:hover {
+  background: #4620d0;
 }
 
-.profile-card__logout-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  border-radius: 12px;
-  background: #FEF2F2;
-  border: none;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  color: #EF4444;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.profile-card__logout-btn:hover {
-  background: #FEE2E2;
-}
-
-/* Profile Stats */
-.profile-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.profile-stats__item {
+.manga-inner__comments-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px 10px;
-  background: #F4F7FB;
-  border-radius: var(--radius-badge);
-  text-align: center;
+  gap: 20px;
 }
 
-.profile-stats__value {
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.profile-stats__label {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--color-gray-text);
-}
-
-/* Profile Tabs */
-.profile-tabs {
+.manga-inner__comment {
   display: flex;
-  border: 1px solid var(--color-gray-light);
-  border-radius: var(--radius-badge);
-  overflow: hidden;
-  margin-bottom: 24px;
-  background: var(--color-white);
+  gap: 14px;
 }
 
-.profile-tabs__tab {
-  flex: 1;
-  padding: 14px 20px;
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--color-gray-text);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: color 0.2s, background 0.2s;
-  text-align: center;
-}
-
-.profile-tabs__tab:not(:last-child) {
-  border-right: 1px solid var(--color-gray-light);
-}
-
-.profile-tabs__tab--active {
-  color: var(--color-black);
-  font-weight: 600;
-  background-color: rgba(86, 44, 240, 0.04);
-}
-
-.profile-tabs__tab:hover {
-  color: var(--color-black);
-}
-
-/* Profile List */
-.profile-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.profile-list__item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 20px;
-  background: var(--color-white);
-  border-radius: var(--radius-badge);
-  text-decoration: none;
-  color: inherit;
-  transition: background-color 0.2s;
-}
-
-.profile-list__item:hover {
-  background-color: rgba(86, 44, 240, 0.03);
-}
-
-.profile-list__thumb {
-  width: 50px;
-  height: 70px;
-  border-radius: 10px;
+.manga-inner__comment-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
 }
 
-.profile-list__thumb img {
+.manga-inner__comment-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.profile-list__info {
+.manga-inner__comment-body {
   flex: 1;
   min-width: 0;
 }
 
-.profile-list__title {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.profile-list__chapter {
-  font-size: 13px;
-  color: var(--color-gray-text);
-}
-
-.profile-list__meta {
+.manga-inner__comment-header {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-  flex-shrink: 0;
-}
-
-.profile-list__status {
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.profile-list__status--reading {
-  background: rgba(86, 44, 240, 0.1);
-  color: #562CF0;
-}
-
-.profile-list__status--planned {
-  background: rgba(69, 179, 70, 0.1);
-  color: #45B346;
-}
-
-.profile-list__status--completed {
-  background: rgba(59, 130, 246, 0.1);
-  color: #3B82F6;
-}
-
-.profile-list__status--dropped {
-  background: rgba(151, 152, 155, 0.1);
-  color: #97989B;
-}
-
-.profile-list__time {
-  font-size: 13px;
-  color: var(--color-gray-text);
-  white-space: nowrap;
-}
-
-/* Profile Settings */
-.profile-settings {
-  background: var(--color-white);
-  border-radius: 25px;
-  padding: 30px;
-}
-
-.profile-settings__group {
-  margin-bottom: 30px;
-}
-
-.profile-settings__group:last-of-type {
-  margin-bottom: 24px;
-}
-
-.profile-settings__title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.profile-settings__field {
-  margin-bottom: 14px;
-}
-
-.profile-settings__label {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-gray-text);
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 6px;
 }
 
-.profile-settings__input {
-  width: 100%;
-  max-width: 400px;
-  padding: 14px 18px;
-  background: #F5F5F7;
-  border: 1.5px solid transparent;
-  border-radius: 15px;
-  font-family: var(--font-body);
-  font-size: 15px;
-  outline: none;
-  transition: border-color 0.2s;
+.manga-inner__comment-name {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #180F2A;
 }
 
-.profile-settings__input:focus {
-  border-color: var(--color-primary);
+.manga-inner__comment-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
 }
 
-.profile-settings__toggle-row {
+.manga-inner__comment-text {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.manga-inner__comment-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 400px;
-  padding: 10px 0;
-  font-size: 15px;
+  gap: 16px;
 }
 
-.profile-settings__save {
-  padding: 16px 40px;
-  background: var(--color-primary);
-  color: var(--color-white);
+.manga-inner__comment-time {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 12px;
+  color: #97989B;
+}
+
+.manga-inner__comment-reply {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 12px;
+  color: #180F2A;
+  cursor: pointer;
+}
+
+.manga-inner__comment-reply:hover {
+  color: #562CF0;
+}
+
+.manga-inner__comment-reactions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.manga-inner__comment-like,
+.manga-inner__comment-dislike {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 12px;
+  color: #97989B;
+  cursor: pointer;
+}
+
+.manga-inner__show-more {
+  background: none;
   border: none;
-  border-radius: var(--radius-btn);
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 600;
+  color: #562CF0;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.manga-inner__show-more:hover {
+  text-decoration: underline;
+}
+
+/* ── Manga Inner — Responsive ── */
+@media (max-width: 1024px) {
+  .manga-inner__chapters-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .manga-inner {
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 20px;
+  }
+
+  .manga-inner__left {
+    width: 100%;
+    align-items: center;
+  }
+
+  .manga-inner__cover {
+    width: 100%;
+    max-width: 323px;
+    height: auto;
+    aspect-ratio: 323/402;
+  }
+
+  .manga-inner__left-btns {
+    width: 100%;
+    max-width: 323px;
+  }
+
+  .manga-inner__read-btn,
+  .manga-inner__bookmark-btn {
+    width: 100%;
+  }
+
+  .manga-inner__info {
+    width: 100%;
+  }
+
+  .manga-inner__rating-block {
+    position: static;
+    flex-direction: row;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .manga-inner__rating-score {
+    font-size: 32px;
+  }
+
+  .manga-inner__title {
+    font-size: 24px;
+  }
+
+  .manga-inner__stats {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .manga-inner__chapters-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .manga-inner__content {
+    padding: 20px 16px;
+  }
+
+  .manga-inner__tabs {
+    border-radius: 12px;
+  }
+
+  .manga-inner__tab {
+    font-size: 13px;
+    height: 50px;
+    border-radius: 12px;
+  }
+
+  .manga-inner__chapter-row {
+    height: 72px;
+    padding: 0 16px;
+  }
+
+  .manga-inner__chapters-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+
+/* ==========================================
+   PROFILE PAGE — Strict Figma
+   ========================================== */
+
+/* ── Banner ── */
+.profile-banner {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(135deg, #1a0a3e 0%, #2d1566 30%, #3d1e8e 60%, #562CF0 100%);
+  overflow: hidden;
+}
+
+.profile-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: url('/images/cover_1.jpg') center/cover no-repeat;
+  opacity: 0.15;
+  filter: blur(20px);
+}
+
+.profile-banner__content {
+  position: relative;
+  z-index: 1;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-banner__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.3);
+  flex-shrink: 0;
+}
+
+.profile-banner__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-banner__info {
+  flex: 1;
+}
+
+.profile-banner__name {
+  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+}
+
+.profile-banner__status {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+}
+
+.profile-banner__upload {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.profile-banner__upload:hover {
+  opacity: 1;
+}
+
+/* ── Mobile tabs ── */
+.profile-mobile-tabs {
+  display: none;
+  overflow-x: auto;
+  gap: 4px;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  -webkit-overflow-scrolling: touch;
+}
+
+.profile-mobile-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-mobile-tabs__item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 13px;
+  color: #180F2A;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.profile-mobile-tabs__item--active {
+  background: #f0ecff;
+  color: #562CF0;
+}
+
+/* ── Profile body layout ── */
+.profile-section {
+  background: #f6f6f6;
+}
+
+.profile-layout {
+  display: flex;
+  gap: 30px;
+  padding-top: 30px;
+  max-width: 1350px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* ── Sidebar ── */
+.profile-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px 0;
+}
+
+.profile-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  background: none;
+  border: none;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 15px;
+  color: #180F2A;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+
+.profile-sidebar__item:hover {
+  background: #f9f9fa;
+}
+
+.profile-sidebar__item--active {
+  background: #f0ecff;
+  color: #562CF0;
+}
+
+.profile-sidebar__divider {
+  height: 1px;
+  background: #e5e5e5;
+  margin: 12px 24px;
+}
+
+.profile-sidebar__logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  background: none;
+  border: none;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 15px;
+  color: #FF4D4F;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.profile-sidebar__logout:hover {
+  background: #fff5f5;
+}
+
+/* ── Content area ── */
+.profile-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-content__title {
+  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #180F2A;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+  letter-spacing: 0.02em;
+}
+
+.profile-content__title--mt {
+  margin-top: 40px;
+}
+
+/* ── Profile form ── */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.profile-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.profile-form__label {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 13px;
+  color: #97989B;
+}
+
+.profile-form__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-form__input {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 36px 0 0;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 15px;
+  color: #180F2A;
+  background: transparent;
+  outline: none;
+}
+
+.profile-form__input:focus {
+  border-bottom-color: #562CF0;
+}
+
+.profile-form__select {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 15px;
+  color: #180F2A;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%2397989B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+}
+
+.profile-form__edit-btn {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.profile-form__textarea {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  color: #180F2A;
+  resize: vertical;
+  outline: none;
+}
+
+.profile-form__textarea:focus {
+  border-color: #562CF0;
+}
+
+.profile-form__textarea::placeholder {
+  color: #97989B;
+}
+
+.profile-form__save {
+  width: 200px;
+  height: 56px;
+  background: #562CF0;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
   transition: background 0.2s;
 }
 
-.profile-settings__save:hover {
-  background: var(--color-primary-hover);
+.profile-form__save:hover {
+  background: #4620d0;
 }
 
-/* ---- Profile Responsive ---- */
+/* ── Bookmarks tab ── */
+.profile-bookmarks__filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
 
+.profile-bookmarks__filter {
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  color: #180F2A;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.profile-bookmarks__filter--active {
+  background: #562CF0;
+  color: #fff;
+  border-color: #562CF0;
+}
+
+.profile-bookmarks__filter:hover:not(.profile-bookmarks__filter--active) {
+  border-color: #562CF0;
+  color: #562CF0;
+}
+
+.profile-bookmarks__toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-bookmarks__edit {
+  background: none;
+  border: none;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  color: #562CF0;
+  cursor: pointer;
+}
+
+.profile-bookmarks__sort {
+  background: none;
+  border: none;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  color: #180F2A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-bookmarks__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-bookmark-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #f0f0f0;
+}
+
+.profile-bookmark-item__cover {
+  width: 70px;
+  height: 90px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-bookmark-item__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-bookmark-item__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-bookmark-item__title {
+  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #180F2A;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.profile-bookmark-item__tags {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 13px;
+  color: #97989B;
+  margin: 0;
+}
+
+.profile-bookmark-item__continue {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  background: #562CF0;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.profile-bookmark-item__continue:hover {
+  background: #4620d0;
+}
+
+/* ── Comments tab ── */
+.profile-comments__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-comment-item {
+  display: flex;
+  gap: 14px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #f0f0f0;
+}
+
+.profile-comment-item__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-comment-item__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-comment-item__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-comment-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.profile-comment-item__name {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #180F2A;
+}
+
+.profile-comment-item__menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.profile-comment-item__text {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+
+.profile-comment-item__footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-comment-item__time {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 12px;
+  color: #97989B;
+}
+
+.profile-comment-item__link {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 12px;
+  color: #180F2A;
+  cursor: pointer;
+}
+
+.profile-comment-item__link:hover {
+  color: #562CF0;
+}
+
+.profile-comment-item__reactions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.profile-comment-item__like {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 12px;
+  color: #97989B;
+}
+
+/* ── History tab ── */
+.profile-history__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.profile-history-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-history-card__cover {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  margin-bottom: 10px;
+}
+
+.profile-history-card__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-history-card__rating {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #2ECC71;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.profile-history-card__title {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #180F2A;
+  margin: 0 0 4px;
+}
+
+.profile-history-card__genres {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 12px;
+  color: #97989B;
+  margin: 0;
+}
+
+/* ── Settings tab ── */
+.profile-settings__password {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-settings__social {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.profile-social-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+}
+
+.profile-social-item__icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #562CF0;
+}
+
+.profile-social-item__name {
+  flex: 1;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 14px;
+  color: #180F2A;
+}
+
+.profile-social-item__btn {
+  padding: 8px 20px;
+  background: #562CF0;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.profile-social-item__btn:hover {
+  background: #4620d0;
+}
+
+/* ── Profile — Responsive ── */
 @media (max-width: 768px) {
-  .profile-section {
-    padding-top: 25px;
-    padding-bottom: 40px;
+  .profile-banner {
+    height: 160px;
   }
 
-  .profile-card {
-    padding: 20px;
-  }
-
-  .profile-card__header {
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  .profile-card__avatar {
-    width: 64px;
-    height: 64px;
-  }
-
-  .profile-card__name {
-    font-size: 20px;
-  }
-
-  .profile-card__actions-top {
-    width: 100%;
-    justify-content: flex-end;
-  }
-
-  .profile-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .profile-stats__value {
-    font-size: 24px;
-  }
-
-  .profile-list__item {
-    padding: 12px 14px;
-    gap: 12px;
-  }
-
-  .profile-list__thumb {
-    width: 42px;
-    height: 58px;
-  }
-
-  .profile-settings {
-    padding: 20px;
-  }
-
-  .profile-settings__input {
-    max-width: 100%;
-  }
-
-  .profile-settings__toggle-row {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 540px) {
-  .profile-card {
-    padding: 16px;
-    border-radius: 18px;
-  }
-
-  .profile-card__header {
-    margin-bottom: 20px;
-  }
-
-  .profile-card__avatar {
-    width: 56px;
-    height: 56px;
-  }
-
-  .profile-card__name {
+  .profile-banner__name {
     font-size: 18px;
   }
 
-  .profile-card__email {
-    font-size: 13px;
+  .profile-banner__status {
+    font-size: 12px;
   }
 
-  .profile-card__logout-btn span {
+  .profile-mobile-tabs {
+    display: flex;
+  }
+
+  .profile-sidebar {
     display: none;
   }
 
-  .profile-card__logout-btn {
-    padding: 10px;
-    border-radius: 10px;
+  .profile-layout {
+    padding-top: 0;
+    gap: 0;
   }
 
-  .profile-stats__item {
-    padding: 14px 8px;
+  .profile-content {
+    padding: 20px 0;
   }
 
-  .profile-stats__value {
-    font-size: 20px;
+  .profile-content__title {
+    font-size: 18px;
   }
 
-  .profile-stats__label {
-    font-size: 12px;
+  .profile-form__row {
+    grid-template-columns: 1fr;
   }
 
-  .profile-tabs__tab {
-    padding: 12px 10px;
-    font-size: 13px;
+  .profile-history__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
-  .profile-list__item {
-    padding: 10px 12px;
+  .profile-settings__social {
+    grid-template-columns: 1fr;
   }
 
-  .profile-list__title {
-    font-size: 14px;
+  .profile-bookmark-item {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .profile-list__status {
-    font-size: 11px;
-    padding: 3px 10px;
-  }
-
-  .profile-list__time {
-    font-size: 12px;
-  }
-
-  .profile-settings {
-    padding: 16px;
-    border-radius: 18px;
-  }
-
-  .profile-settings__save {
+  .profile-bookmark-item__continue {
     width: 100%;
-    padding: 14px;
+    text-align: center;
   }
 }
-
 /* ==========================================
    CATALOG PAGE
    ========================================== */
