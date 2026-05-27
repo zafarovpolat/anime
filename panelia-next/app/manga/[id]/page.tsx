@@ -149,6 +149,69 @@ function ReverseIcon() {
   );
 }
 
+/* ── Toolbar icons ── */
+function ToolbarChaptersIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 7H21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M3 12H21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M3 17H21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function ToolbarCommentsIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M18.47 16.83L18.86 19.99C18.96 20.82 18.07 21.4 17.36 20.97L13.17 18.48C12.71 18.48 12.26 18.45 11.82 18.39C12.56 17.52 13 16.43 13 15.25C13 12.56 10.76 10.37 8 10.37C6.81 10.37 5.72 10.78 4.85 11.47C4.82 11.2 4.81 10.93 4.81 10.65C4.81 6.27 8.69 2.73 13.47 2.73C18.25 2.73 22.13 6.27 22.13 10.65C22.13 13.21 20.69 15.46 18.47 16.83Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M13 15.25C13 16.43 12.56 17.52 11.82 18.39C10.83 19.59 9.26 20.25 7.44 20.25L5.1 21.67C4.67 21.93 4.12 21.57 4.17 21.07L4.37 19.24C2.91 18.25 2 16.82 2 15.25C2 13.6 2.98 12.12 4.55 11.14C5.39 10.61 6.39 10.29 7.5 10.22C10.49 10.05 13 12.37 13 15.25Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+function ToolbarBookmarkIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M16.82 2H7.18C5.05 2 3.32 3.74 3.32 5.86V19.95C3.32 21.75 4.61 22.51 6.19 21.64L11.07 18.93C11.59 18.64 12.43 18.64 12.94 18.93L17.82 21.64C19.4 22.52 20.69 21.76 20.69 19.95V5.86C20.68 3.74 18.95 2 16.82 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+function ToolbarSettingsIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M2 12.88V11.12C2 10.08 2.85 9.22 3.9 9.22C5.71 9.22 6.45 7.94 5.54 6.37C5.02 5.47 5.33 4.3 6.24 3.78L7.97 2.79C8.76 2.32 9.78 2.6 10.25 3.39L10.36 3.58C11.26 5.15 12.74 5.15 13.65 3.58L13.76 3.39C14.23 2.6 15.25 2.32 16.04 2.79L17.77 3.78C18.68 4.3 18.99 5.47 18.47 6.37C17.56 7.94 18.3 9.22 20.11 9.22C21.15 9.22 22.01 10.07 22.01 11.12V12.88C22.01 13.92 21.16 14.78 20.11 14.78C18.3 14.78 17.56 16.06 18.47 17.63C18.99 18.54 18.68 19.7 17.77 20.22L16.04 21.21C15.25 21.68 14.23 21.4 13.76 20.61L13.65 20.42C12.75 18.85 11.27 18.85 10.36 20.42L10.25 20.61C9.78 21.4 8.76 21.68 7.97 21.21L6.24 20.22C5.33 19.7 5.02 18.53 5.54 17.63C6.45 16.06 5.71 14.78 3.9 14.78C2.85 14.78 2 13.92 2 12.88Z" stroke="currentColor" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M4 4L12 12" stroke="#97989B" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M12 4L4 12" stroke="#97989B" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+/* ── Toolbar Panel Data ── */
+const TOOLBAR_CHAPTERS = Array.from({ length: 10 }, (_, i) => ({
+  volume: 1,
+  chapter: 241 - i,
+  date: '09.01.2026',
+  views: '3 646',
+}));
+
+const TOOLBAR_COMMENTS = Array.from({ length: 5 }, (_, i) => ({
+  id: i,
+  username: 'Jul_Mol',
+  text: 'Нравится и рисовка да фантазия автора удивляет',
+  time: '14 часов назад',
+}));
+
+const BOOKMARK_OPTIONS = ['Читаю', 'Буду читать', 'Брошено', 'Прочитано', 'Избранное'];
+
 /* ── Page Component ── */
 export default function MangaPage({ params }: { params: { id: string } }) {
   const id = parseInt(params.id) || 0;
@@ -156,6 +219,11 @@ export default function MangaPage({ params }: { params: { id: string } }) {
   const coverIdx = (id % 12) + 1;
 
   const [activeTab, setActiveTab] = useState<'main' | 'chapters' | 'reviews'>('main');
+  const [toolbarPanel, setToolbarPanel] = useState<'none' | 'chapters' | 'comments' | 'bookmarks'>('none');
+
+  const togglePanel = (panel: 'chapters' | 'comments' | 'bookmarks') => {
+    setToolbarPanel(toolbarPanel === panel ? 'none' : panel);
+  };
 
   const newChapters = Array.from({ length: 8 }, (_, i) => 241 - i);
 
@@ -349,6 +417,106 @@ export default function MangaPage({ params }: { params: { id: string } }) {
             </div>
           </div>
         </section>
+        {/* ── Right Toolbar ── */}
+        <div className="manga-toolbar">
+          <div className="manga-toolbar__bar">
+            <div className="manga-toolbar__counter">
+              <span className="manga-toolbar__counter-current">1</span>
+              <span className="manga-toolbar__counter-sep">/</span>
+              <span className="manga-toolbar__counter-total">15</span>
+            </div>
+            <button
+              className={`manga-toolbar__btn${toolbarPanel === 'chapters' ? ' manga-toolbar__btn--active' : ''}`}
+              onClick={() => togglePanel('chapters')}
+            >
+              <ToolbarChaptersIcon />
+            </button>
+            <button
+              className={`manga-toolbar__btn${toolbarPanel === 'comments' ? ' manga-toolbar__btn--active' : ''}`}
+              onClick={() => togglePanel('comments')}
+            >
+              <ToolbarCommentsIcon />
+            </button>
+            <button
+              className={`manga-toolbar__btn${toolbarPanel === 'bookmarks' ? ' manga-toolbar__btn--active' : ''}`}
+              onClick={() => togglePanel('bookmarks')}
+            >
+              <ToolbarBookmarkIcon />
+            </button>
+            <button className="manga-toolbar__btn">
+              <ToolbarSettingsIcon />
+            </button>
+          </div>
+
+          {/* ── Chapters panel ── */}
+          {toolbarPanel === 'chapters' && (
+            <div className="manga-toolbar__panel">
+              <div className="manga-toolbar__panel-header">
+                <h3 className="manga-toolbar__panel-title">Список глав</h3>
+                <button className="manga-toolbar__panel-close" onClick={() => setToolbarPanel('none')}>
+                  <CloseIcon />
+                </button>
+              </div>
+              <div className="manga-toolbar__panel-sort">
+                <span>Сортировка</span>
+              </div>
+              <div className="manga-toolbar__panel-list">
+                {TOOLBAR_CHAPTERS.map((ch) => (
+                  <div key={ch.chapter} className="manga-toolbar__panel-row">
+                    <div className="manga-toolbar__panel-row-title">
+                      <span>Том {ch.volume} · Глава {ch.chapter}</span>
+                    </div>
+                    <div className="manga-toolbar__panel-row-meta">
+                      <span>{ch.date}</span>
+                      <span><EyeSmallIcon /> {ch.views}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ── Comments panel ── */}
+          {toolbarPanel === 'comments' && (
+            <div className="manga-toolbar__panel">
+              <div className="manga-toolbar__panel-header">
+                <h3 className="manga-toolbar__panel-title">Комментарии</h3>
+                <button className="manga-toolbar__panel-close" onClick={() => setToolbarPanel('none')}>
+                  <CloseIcon />
+                </button>
+              </div>
+              <div className="manga-toolbar__panel-comments">
+                {TOOLBAR_COMMENTS.map((c) => (
+                  <div key={c.id} className="manga-toolbar__comment">
+                    <div className="manga-toolbar__comment-avatar">
+                      <img src={`/images/cover_${(c.id % 12) + 1}.jpg`} alt={c.username} />
+                    </div>
+                    <div className="manga-toolbar__comment-body">
+                      <span className="manga-toolbar__comment-name">{c.username}</span>
+                      <p className="manga-toolbar__comment-text">{c.text}</p>
+                      <span className="manga-toolbar__comment-time">{c.time}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ── Bookmarks dropdown ── */}
+          {toolbarPanel === 'bookmarks' && (
+            <div className="manga-toolbar__dropdown">
+              <div className="manga-toolbar__dropdown-header">
+                <h4 className="manga-toolbar__dropdown-title">Закладки</h4>
+              </div>
+              {BOOKMARK_OPTIONS.map((opt) => (
+                <button key={opt} className="manga-toolbar__dropdown-item">
+                  <span className="manga-toolbar__dropdown-dot"></span>
+                  {opt}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </main>
       <Footer />
     </>
