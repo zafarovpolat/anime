@@ -68,9 +68,9 @@ function SortIcon() {
       <path
         d="M1 12L4 15L7 12M4 15V1M15 4L12 1L9 4M12 1V15"
         stroke="#562CF0"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -88,9 +88,9 @@ function SearchIcon({ color = "#97989B" }: { color?: string }) {
       <path
         d="M23.3333 23.3333L18.4372 18.4372M18.4372 18.4372C20.0206 16.8537 21 14.6662 21 12.25C21 7.41751 17.0825 3.5 12.25 3.5C7.41751 3.5 3.5 7.41751 3.5 12.25C3.5 17.0825 7.41751 21 12.25 21C14.6662 21 16.8537 20.0206 18.4372 18.4372Z"
         stroke="#0F172A"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -115,14 +115,14 @@ function TrashIcon() {
         fill="#180F2A"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M8.78125 15.5833C8.78125 15.2036 9.08905 14.8958 9.46875 14.8958H12.5212C12.9009 14.8958 13.2087 15.2036 13.2087 15.5833C13.2087 15.9629 12.9009 16.2708 12.5212 16.2708H9.46875C9.08905 16.2708 8.78125 15.9629 8.78125 15.5833Z"
         fill="#180F2A"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M8.02051 11.9167C8.02051 11.5371 8.32831 11.2292 8.70801 11.2292H13.2913C13.671 11.2292 13.9788 11.5371 13.9788 11.9167C13.9788 12.2964 13.671 12.6042 13.2913 12.6042H8.70801C8.32831 12.6042 8.02051 12.2964 8.02051 11.9167Z"
         fill="#180F2A"
       />
@@ -144,9 +144,9 @@ function ChevronIcon({ open }: { open: boolean }) {
           id="Vector"
           d="M16 10L12 14L8 10"
           stroke="#180F2A"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
@@ -657,9 +657,9 @@ export default function CatalogPage() {
                   <path
                     d="M13 13L7.00002 7.00002M7.00002 7.00002L1 1M7.00002 7.00002L13 1M7.00002 7.00002L1 13"
                     stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </button>
@@ -918,3 +918,4 @@ export default function CatalogPage() {
     </>
   );
 }
+
