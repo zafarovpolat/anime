@@ -309,24 +309,35 @@ function ReverseIcon() {
 /* ── Toolbar icons ── */
 function ToolbarChaptersIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M3 7H21"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
+        d="M21 5.25H14C13.59 5.25 13.25 4.91 13.25 4.5C13.25 4.09 13.59 3.75 14 3.75H21C21.41 3.75 21.75 4.09 21.75 4.5C21.75 4.91 21.41 5.25 21 5.25Z"
+        fill="#180F2A"
       />
       <path
-        d="M3 12H21"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
+        opacity="0.4"
+        d="M21 10.25H14C13.59 10.25 13.25 9.91 13.25 9.5C13.25 9.09 13.59 8.75 14 8.75H21C21.41 8.75 21.75 9.09 21.75 9.5C21.75 9.91 21.41 10.25 21 10.25Z"
+        fill="#180F2A"
       />
       <path
-        d="M3 17H21"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
+        d="M21 15.25H3C2.59 15.25 2.25 14.91 2.25 14.5C2.25 14.09 2.59 13.75 3 13.75H21C21.41 13.75 21.75 14.09 21.75 14.5C21.75 14.91 21.41 15.25 21 15.25Z"
+        fill="#180F2A"
+      />
+      <path
+        opacity="0.4"
+        d="M21 20.25H3C2.59 20.25 2.25 19.91 2.25 19.5C2.25 19.09 2.59 18.75 3 18.75H21C21.41 18.75 21.75 19.09 21.75 19.5C21.75 19.91 21.41 20.25 21 20.25Z"
+        fill="#180F2A"
+      />
+      <path
+        opacity="0.4"
+        d="M7.92 3.5H5.08C3.68 3.5 3 4.18 3 5.58V8.43C3 9.83 3.68 10.51 5.08 10.51H7.93C9.33 10.51 10.01 9.83 10.01 8.43V5.58C10 4.18 9.32 3.5 7.92 3.5Z"
+        fill="#180F2A"
       />
     </svg>
   );
@@ -334,20 +345,21 @@ function ToolbarChaptersIcon() {
 
 function ToolbarCommentsIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M18.47 16.83L18.86 19.99C18.96 20.82 18.07 21.4 17.36 20.97L13.17 18.48C12.71 18.48 12.26 18.45 11.82 18.39C12.56 17.52 13 16.43 13 15.25C13 12.56 10.76 10.37 8 10.37C6.81 10.37 5.72 10.78 4.85 11.47C4.82 11.2 4.81 10.93 4.81 10.65C4.81 6.27 8.69 2.73 13.47 2.73C18.25 2.73 22.13 6.27 22.13 10.65C22.13 13.21 20.69 15.46 18.47 16.83Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        opacity="0.4"
+        d="M21.5475 19.6349L22.0025 23.3216C22.1192 24.2899 21.0808 24.9666 20.2525 24.4649L15.3642 21.5599C14.8275 21.5599 14.3025 21.5249 13.7892 21.4549C14.6525 20.4399 15.1658 19.1566 15.1658 17.7682C15.1658 14.4549 12.2958 11.7716 8.74917 11.7716C7.39584 11.7716 6.14751 12.1566 5.10918 12.8333C5.07418 12.5416 5.0625 12.2499 5.0625 11.9466C5.0625 6.63824 9.67084 2.33325 15.3642 2.33325C21.0575 2.33325 25.6658 6.63824 25.6658 11.9466C25.6658 15.0966 24.0442 17.8849 21.5475 19.6349Z"
+        fill="#180F2A"
       />
       <path
-        d="M13 15.25C13 16.43 12.56 17.52 11.82 18.39C10.83 19.59 9.26 20.25 7.44 20.25L5.1 21.67C4.67 21.93 4.12 21.57 4.17 21.07L4.37 19.24C2.91 18.25 2 16.82 2 15.25C2 13.6 2.98 12.12 4.55 11.14C5.39 10.61 6.39 10.29 7.5 10.22C10.49 10.05 13 12.37 13 15.25Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M15.1654 17.7683C15.1654 19.1567 14.652 20.44 13.7887 21.455C12.6337 22.855 10.802 23.7533 8.7487 23.7533L5.7037 25.5617C5.19036 25.8767 4.53703 25.445 4.60703 24.85L4.89869 22.5517C3.33536 21.4667 2.33203 19.7283 2.33203 17.7683C2.33203 15.715 3.4287 13.9067 5.1087 12.8334C6.14704 12.1567 7.39536 11.7717 8.7487 11.7717C12.2954 11.7717 15.1654 14.455 15.1654 17.7683Z"
+        fill="#180F2A"
       />
     </svg>
   );
@@ -355,13 +367,19 @@ function ToolbarCommentsIcon() {
 
 function ToolbarBookmarkIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <svg
+      width="22"
+      height="20"
+      viewBox="0 0 22 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M16.82 2H7.18C5.05 2 3.32 3.74 3.32 5.86V19.95C3.32 21.75 4.61 22.51 6.19 21.64L11.07 18.93C11.59 18.64 12.43 18.64 12.94 18.93L17.82 21.64C19.4 22.52 20.69 21.76 20.69 19.95V5.86C20.68 3.74 18.95 2 16.82 2Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M11 4.55744C8.77778 -0.737018 1 -0.17311 1 6.59382C1 13.3607 11 19 11 19C11 19 21 13.3607 21 6.59382C21 -0.17311 13.2222 -0.737018 11 4.55744Z"
+        stroke="#180F2A"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );
@@ -467,10 +485,13 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                   <img src={`/images/cover_${coverIdx}.jpg`} alt={data.title} />
                 </div>
                 <div className="manga-inner__left-btns">
-                  <button className="manga-inner__read-btn">
+                  <Link
+                    href={`/manga/${id}/read`}
+                    className="manga-inner__read-btn"
+                  >
                     <BookSquareIcon />
                     Читать
-                  </button>
+                  </Link>
                   <button className="manga-inner__bookmark-btn">
                     <BookmarkOutlineIcon />В закладки
                   </button>
