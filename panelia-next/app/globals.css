@@ -2746,36 +2746,36 @@ button {
    ========================================== */
 
 /* ── Banner ── */
+.profile-page-main {
+  padding-top: 20px;
+  gap: 30px;
+}
+
 .profile-banner {
   position: relative;
-  height: 200px;
-  background: linear-gradient(135deg, #1a0a3e 0%, #2d1566 30%, #3d1e8e 60%, #562CF0 100%);
+  height: 222px;
+  background: 
+    linear-gradient(180deg, rgba(24, 15, 42, 0.7) 16.61%, rgba(82, 51, 144, 0.7) 97.66%),
+    url('/images/profile-bg.png') center/cover no-repeat;
   overflow: hidden;
 }
 
-.profile-banner__overlay {
-  position: absolute;
-  inset: 0;
-  background: url('/images/cover_1.jpg') center/cover no-repeat;
-  opacity: 0.15;
-  filter: blur(20px);
+.profile-banner .container {
+  height: 100%;
 }
 
 .profile-banner__content {
   position: relative;
   z-index: 1;
-  max-width: 1350px;
-  margin: 0 auto;
-  padding: 0 30px;
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .profile-banner__avatar {
-  width: 80px;
-  height: 80px;
+  width: 139px;
+  height: 139px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid rgba(255,255,255,0.3);
@@ -2794,31 +2794,18 @@ button {
 
 .profile-banner__name {
   font-family: 'SONGER SemiExpanded', sans-serif;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 800;
   color: #fff;
-  margin: 0 0 4px;
+  margin: 0 0 9px;
   text-transform: uppercase;
 }
 
 .profile-banner__status {
   font-family: 'Golos Text', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(255,255,255,0.7);
   margin: 0;
-}
-
-.profile-banner__upload {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
-
-.profile-banner__upload:hover {
-  opacity: 1;
 }
 
 /* ── Mobile tabs ── */
@@ -2858,93 +2845,103 @@ button {
 }
 
 /* ── Profile body layout ── */
-.profile-section {
-  background: #f6f6f6;
-}
 
 .profile-layout {
   display: flex;
-  gap: 30px;
-  padding-top: 30px;
+  gap: 20px;
   max-width: 1350px;
   margin: 0 auto;
-  align-items: flex-start;
 }
 
 /* ── Sidebar ── */
 .profile-sidebar {
-  width: 240px;
+  align-self: start;
+  width: 436px;
   flex-shrink: 0;
   background: #fff;
   border-radius: 20px;
-  padding: 24px 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .profile-sidebar__nav {
   display: flex;
   flex-direction: column;
-  gap: 2px;
 }
 
 .profile-sidebar__item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 24px;
+  gap: 10px;
+  padding: 0 25px;
   background: none;
   border: none;
+  border-radius: 20px;
+  min-height: 81px;
   font-family: 'Golos Text', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 400;
   color: #180F2A;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.18s;
   text-align: left;
   width: 100%;
 }
 
-.profile-sidebar__item:hover {
-  background: #f9f9fa;
+.profile-sidebar__item svg path {
+  fill: #97989B;
 }
 
 .profile-sidebar__item--active {
-  background: #f0ecff;
-  color: #562CF0;
+  background: #F9F9FA;
+  color: #180F2A;
+}
+
+.profile-sidebar__item--active svg path {
+  fill: #97989B;
 }
 
 .profile-sidebar__divider {
   height: 1px;
-  background: #e5e5e5;
-  margin: 12px 24px;
+  background: #E8E8EC;
+  margin: 25px 0;
 }
 
 .profile-sidebar__logout {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 24px;
-  background: none;
+  gap: 10px;
+  min-height: 80px;
+  padding: 0 25px;
+  background: #F9F9FA;
   border: none;
+  border-radius: 16px;
   font-family: 'Golos Text', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 400;
   color: #FF4D4F;
   cursor: pointer;
   width: 100%;
   text-align: left;
+  transition: background 0.18s;
 }
 
 .profile-sidebar__logout:hover {
-  background: #fff5f5;
+  background: #FFE9E9;
 }
 
 /* ── Content area ── */
 .profile-content {
+  padding-top: 20px;
   flex: 1;
   min-width: 0;
 }
 
 .profile-content__title {
   font-family: 'SONGER SemiExpanded', sans-serif;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 800;
   color: #180F2A;
   text-transform: uppercase;
@@ -2953,26 +2950,26 @@ button {
 }
 
 .profile-content__title--mt {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 /* ── Profile form ── */
 .profile-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .profile-form__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
 }
 
 .profile-form__field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 12px;
 }
 
 .profile-form__field--full {
@@ -2981,7 +2978,8 @@ button {
 
 .profile-form__label {
   font-family: 'Golos Text', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
+  padding-left: 20px;
   color: #97989B;
 }
 
@@ -2989,33 +2987,30 @@ button {
   position: relative;
   display: flex;
   align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  min-height: 81px;
 }
 
 .profile-form__input {
   width: 100%;
-  height: 48px;
+  height: 100%;
   border: none;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 0 36px 0 0;
+  padding: 0 20px;
   font-family: 'Golos Text', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: #180F2A;
   background: transparent;
   outline: none;
 }
 
-.profile-form__input:focus {
-  border-bottom-color: #562CF0;
-}
-
 .profile-form__select {
   width: 100%;
-  height: 48px;
+  height: 100%;
   border: none;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 0;
+  padding: 0 20px;
   font-family: 'Golos Text', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: #180F2A;
   background: transparent;
   outline: none;
@@ -3024,12 +3019,85 @@ button {
   -webkit-appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%2397989B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 0 center;
+  background-position: right 20px center;
+}
+
+/* ── Custom Select ── */
+.custom-select {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-select__trigger {
+  width: 100%;
+  height: 100%;
+  min-height: 81px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: transparent;
+  border: none;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
+  color: #180F2A;
+  cursor: pointer;
+  text-align: left;
+}
+
+.custom-select__arrow {
+  flex-shrink: 0;
+  transition: transform 0.22s ease;
+}
+
+.custom-select--open .custom-select__arrow {
+  transform: rotate(180deg);
+}
+
+.custom-select__dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  overflow: hidden;
+  z-index: 100;
+  animation: selectDropIn 0.18s ease;
+}
+
+@keyframes selectDropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.custom-select__option {
+  width: 100%;
+  padding: 14px 20px;
+  background: none;
+  border: none;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
+  color: #180F2A;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.custom-select__option:hover {
+  background: #F9F9FA;
+}
+
+.custom-select__option--active {
+  background: #F9F9FA;
+  color: #562CF0;
 }
 
 .profile-form__edit-btn {
   position: absolute;
-  right: 0;
+  right: 20px;
   background: none;
   border: none;
   cursor: pointer;
@@ -3038,19 +3106,15 @@ button {
 
 .profile-form__textarea {
   width: 100%;
-  min-height: 120px;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  padding: 14px 16px;
+  min-height: 190px;
+  border-radius: 15px;
+  padding: 20px;
   font-family: 'Golos Text', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #180F2A;
   resize: vertical;
   outline: none;
-}
-
-.profile-form__textarea:focus {
-  border-color: #562CF0;
+  border: none;
 }
 
 .profile-form__textarea::placeholder {
@@ -3058,14 +3122,14 @@ button {
 }
 
 .profile-form__save {
-  width: 200px;
-  height: 56px;
+  max-width: 247px;
+  height: 79px;
   background: #562CF0;
   color: #fff;
   border: none;
-  border-radius: 14px;
+  border-radius: 15px;
   font-family: 'Golos Text', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s;
@@ -3077,49 +3141,61 @@ button {
 
 /* ── Bookmarks tab ── */
 .profile-bookmarks__filters {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   flex-wrap: wrap;
+  background: #fff;
+  border-radius: 25px;
+  padding: 19px 15px;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
 }
 
 .profile-bookmarks__filter {
-  padding: 8px 20px;
-  border-radius: 10px;
-  border: 1px solid #e5e5e5;
-  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 25px;
+  border-radius: 20px;
+  border: none;
+  background: none;
   font-family: 'Golos Text', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 400;
   color: #180F2A;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.18s;
+  min-height: 65px;
+  white-space: nowrap;
+}
+
+.profile-bookmarks__filter svg {
+  width: 21px;
+  height: 21px;
 }
 
 .profile-bookmarks__filter--active {
-  background: #562CF0;
-  color: #fff;
-  border-color: #562CF0;
-}
-
-.profile-bookmarks__filter:hover:not(.profile-bookmarks__filter--active) {
-  border-color: #562CF0;
-  color: #562CF0;
+  background: #F9F9FA;
+  color: #180F2A;
 }
 
 .profile-bookmarks__toolbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 6px;
+  margin-bottom: 39px;
 }
 
 .profile-bookmarks__edit {
   background: none;
   border: none;
   font-family: 'Golos Text', sans-serif;
-  font-size: 14px;
-  color: #562CF0;
+  font-size: 15px;
+  color: #97989B;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0;
 }
 
 .profile-bookmarks__sort {
@@ -3132,27 +3208,27 @@ button {
   display: flex;
   align-items: center;
   gap: 6px;
+  margin-left: auto;
 }
 
 .profile-bookmarks__list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .profile-bookmark-item {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   background: #fff;
-  border-radius: 16px;
-  padding: 16px;
-  border: 1px solid #f0f0f0;
+  border-radius: 20px;
+  padding: 15px;
 }
 
 .profile-bookmark-item__cover {
-  width: 70px;
-  height: 90px;
+  width: 83px;
+  height: 100px;
   border-radius: 10px;
   overflow: hidden;
   flex-shrink: 0;
@@ -3171,29 +3247,34 @@ button {
 
 .profile-bookmark-item__title {
   font-family: 'SONGER SemiExpanded', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 800;
   color: #180F2A;
-  margin: 0 0 6px;
+  margin: 0 0 7px;
   text-transform: uppercase;
 }
 
 .profile-bookmark-item__tags {
   font-family: 'Golos Text', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: #97989B;
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .profile-bookmark-item__continue {
   flex-shrink: 0;
-  padding: 12px 24px;
+  padding: 0 30px;
+  min-height: 79px;
   background: #562CF0;
   color: #fff;
   border: none;
-  border-radius: 12px;
+  border-radius: 15px;
   font-family: 'Golos Text', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
@@ -3211,18 +3292,20 @@ button {
   gap: 20px;
 }
 
+.profile-comments__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .profile-comment-item {
   display: flex;
-  gap: 14px;
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-  border: 1px solid #f0f0f0;
+  gap: 16px;
 }
 
 .profile-comment-item__avatar {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -3232,6 +3315,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: #DDDDE0;
 }
 
 .profile-comment-item__body {
@@ -3239,79 +3323,162 @@ button {
   min-width: 0;
 }
 
+.profile-comment-item__top {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
 .profile-comment-item__header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .profile-comment-item__name {
   font-family: 'Golos Text', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   color: #180F2A;
+}
+
+.profile-comment-item__menu-wrap {
+  position: relative;
 }
 
 .profile-comment-item__menu {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.profile-comment-item__menu:hover {
+  background: #F2F2F4;
+}
+
+.comment-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+}
+
+.comment-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 200px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.14);
+  padding: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: commentMenuIn 0.18s ease;
+}
+
+@keyframes commentMenuIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-4px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+.comment-menu-dropdown__item {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 14px;
+  background: none;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #180F2A;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.comment-menu-dropdown__item--active {
+  background: #F2F2F4;
+}
+
+.comment-menu-dropdown__item:hover {
+  background: #F5F5F7;
 }
 
 .profile-comment-item__text {
   font-family: 'Golos Text', sans-serif;
-  font-size: 14px;
-  color: #333;
-  line-height: 1.5;
-  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 1.45;
+  margin: 0;
 }
 
 .profile-comment-item__footer {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
+  padding-left: 4px;
+  width: 100%;
 }
 
 .profile-comment-item__time {
   font-family: 'Golos Text', sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   color: #97989B;
 }
 
 .profile-comment-item__link {
   font-family: 'Golos Text', sans-serif;
-  font-size: 12px;
-  color: #180F2A;
+  font-size: 15px;
+  color: #97989B;
+  font-weight: 600;
+  text-decoration: none;
   cursor: pointer;
-}
-
-.profile-comment-item__link:hover {
-  color: #562CF0;
 }
 
 .profile-comment-item__reactions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   margin-left: auto;
 }
 
-.profile-comment-item__like {
+.profile-comment-item__like,
+.profile-comment-item__dislike {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
   font-family: 'Golos Text', sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   color: #97989B;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.profile-comment-item__like:hover,
+.profile-comment-item__dislike:hover {
+  background: #F5F5F7;
 }
 
 /* ── History tab ── */
 .profile-history__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 8px;
 }
 
 .profile-history-card {
@@ -3365,54 +3532,54 @@ button {
 .profile-settings__password {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .profile-settings__social {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 10px;
 }
 
 .profile-social-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 20px;
+  gap: 15px;
+  padding: 0 25px;
   background: #fff;
-  border-radius: 12px;
-  border: 1px solid #f0f0f0;
+  border-radius: 15px;
+  min-height: 116px;
 }
 
 .profile-social-item__icon {
-  width: 32px;
-  height: 32px;
+  width: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   font-weight: 700;
-  color: #562CF0;
 }
 
 .profile-social-item__name {
   flex: 1;
   font-family: 'Golos Text', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 500;
   color: #180F2A;
 }
 
 .profile-social-item__btn {
-  padding: 8px 20px;
+  padding: 0 20px;
   background: #562CF0;
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   font-family: 'Golos Text', sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s;
+  min-height: 61px;
 }
 
 .profile-social-item__btn:hover {
@@ -3554,6 +3721,7 @@ button {
 
 .catalog-title-row__actions {
   display: flex;
+  margin-bottom: 15px;
   align-items: center;
   gap: 10px;
 }
@@ -5928,6 +6096,79 @@ button {
   justify-content: center;
   flex-shrink: 0;
 }
+
+/* ── Bookmark Edit Modal (Profile) ── */
+.bookmark-edit-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 200;
+  animation: fadeIn 0.2s ease;
+}
+
+.bookmark-edit-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 335px;
+  max-width: calc(100vw - 32px);
+  background: #fff;
+  border-radius: 24px;
+  padding: 19px 15px;
+  z-index: 201;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.14);
+  animation: bookmarkEditIn 0.2s ease;
+}
+
+@keyframes bookmarkEditIn {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.96); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.bookmark-edit-modal .reader__bookmark-popup-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.bookmark-edit-modal .reader__bookmark-popup-opt {
+  border-radius: 16px;
+  min-height: 60px;
+  padding: 0 16px;
+}
+
+.bookmark-edit-modal__drag {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.bookmark-edit-modal__input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  padding: 0 25px 0;
+  border-top: 1px solid #EBEBED;
+  min-height: 65px;
+}
+
+.bookmark-edit-modal__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
+  color: #180F2A;
+  background: transparent;
+}
+
+.bookmark-edit-modal__input::placeholder {
+  color: #B0B0B5;
+}
+
 
 /* Mobile overlay */
 .reader__overlay {
