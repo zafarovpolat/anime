@@ -597,37 +597,42 @@ export default function MangaReadPage({ params }: { params: { id: string } }) {
             {currentChapter}/{totalChapters}
           </div>
 
-          <button
-            id="reader-btn-chapters"
-            className={`reader__sidebar-btn${activePanel === "chapters" ? " reader__sidebar-btn--active" : ""}`}
-            onClick={() => togglePanel("chapters")}
-            aria-label="Список глав"
-          >
-            <ChaptersIcon />
-          </button>
+          <div className="reader__sidebar-group">
+            <button
+              id="reader-btn-chapters"
+              className={`reader__sidebar-btn${activePanel === "chapters" ? " reader__sidebar-btn--active" : ""}`}
+              onClick={() => togglePanel("chapters")}
+              aria-label="Список глав"
+            >
+              <ChaptersIcon />
+              <span className="reader__sidebar-count">302</span>
+            </button>
 
-          <button
-            id="reader-btn-comments"
-            className={`reader__sidebar-btn${activePanel === "comments" ? " reader__sidebar-btn--active" : ""}`}
-            onClick={() => togglePanel("comments")}
-            aria-label="Комментарии"
-          >
-            <CommentsIcon />
-          </button>
+            <button
+              id="reader-btn-comments"
+              className={`reader__sidebar-btn${activePanel === "comments" ? " reader__sidebar-btn--active" : ""}`}
+              onClick={() => togglePanel("comments")}
+              aria-label="Комментарии"
+            >
+              <CommentsIcon />
+              <span className="reader__sidebar-count">574</span>
+            </button>
 
-          <button
-            id="reader-btn-heart"
-            className="reader__sidebar-btn"
-            aria-label="Нравится"
-            onClick={() => setLiked((v) => !v)}
-          >
-            {liked ? <HeartFilledIcon /> : <HeartOutlineIcon />}
-          </button>
+            <button
+              id="reader-btn-heart"
+              className="reader__sidebar-btn"
+              aria-label="Нравится"
+              onClick={() => setLiked((v) => !v)}
+            >
+              {liked ? <HeartFilledIcon /> : <HeartOutlineIcon />}
+              <span className="reader__sidebar-count">10к</span>
+            </button>
+          </div>
 
           <div className="reader__sidebar-bookmark-wrap">
             <button
               id="reader-btn-bookmark"
-              className={`reader__sidebar-btn${bookmarkOpen ? " reader__sidebar-btn--active" : ""}`}
+              className={`reader__sidebar-btn reader__sidebar-btn--solo${bookmarkOpen ? " reader__sidebar-btn--active" : ""}`}
               onClick={() => setBookmarkOpen((v) => !v)}
               aria-label="Закладка"
             >
