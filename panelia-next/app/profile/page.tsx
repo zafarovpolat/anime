@@ -414,12 +414,6 @@ export default function ProfilePage() {
               {item.label}
             </button>
           ))}
-          <button
-            className={`profile-mobile-tabs__item${activeTab === 'logout' ? ' profile-mobile-tabs__item--active' : ''}`}
-          >
-            <LogoutIcon />
-            Выйти
-          </button>
         </div>
 
         {/* ── Body: sidebar + content ── */}
@@ -677,6 +671,10 @@ export default function ProfilePage() {
                     </div>
                   </div>
                 )}
+                <button className="profile-mobile-logout">
+                  <LogoutIcon />
+                  Выйти
+                </button>
               </div>
             </div>
           </div>

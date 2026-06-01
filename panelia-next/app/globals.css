@@ -2952,6 +2952,10 @@ button {
   background: #FFE9E9;
 }
 
+.profile-mobile-logout {
+  display: none;
+}
+
 /* ── Content area ── */
 .profile-content {
   padding-top: 20px;
@@ -3876,6 +3880,9 @@ button {
   .profile-banner {
     height: 170px;
   }
+  .profile-settings__social {
+    grid-template-columns: 1fr;
+  }
   .profile-banner__content {
     gap: 18px;
   }
@@ -4216,11 +4223,33 @@ button {
 }
   /* Content */
   .profile-content {
-    padding: 0  0 16px 0;
+    padding: 0 0 16px 0;
   }
   .profile-content__title {
     font-size: 20px;
     margin: 0 0 20px;
+  }
+  .profile-mobile-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 56px;
+    padding: 0 20px;
+    margin-top: 24px;
+    background: #ffffff;
+    border: none;
+    border-radius: 16px;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #FF4D4F;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.18s;
+  }
+  .profile-mobile-logout:hover {
+    background: #FFE9E9;
   }
 
   .profile-banner .container {
@@ -4269,6 +4298,7 @@ button {
   .profile-form__save {
     height: 64px;
     font-size: 12px;
+    margin-bottom: 20px;
   }
 
   /* Bookmarks */
@@ -4324,15 +4354,34 @@ button {
 
   /* Comments */
   .profile-comment-item {
-    gap: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+    row-gap: 12px;
   }
   .profile-comment-item__avatar {
     width: 46px;
     height: 46px;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .profile-comment-item__body {
+    display: contents;
   }
   .profile-comment-item__top {
+    grid-column: 2;
+    grid-row: 1;
     padding: 15px;
     border-radius: 20px;
+    margin-bottom: 0;
+  }
+  .profile-comment-item__footer {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 0;
   }
   .profile-comment-item__header {
     margin-bottom: 10px;
@@ -4342,9 +4391,6 @@ button {
   }
   .profile-comment-item__text {
     font-size: 13px;
-  }
-  .profile-comment-item__footer {
-    gap: 10px;
   }
   .profile-comment-item__time,
   .profile-comment-item__link,
