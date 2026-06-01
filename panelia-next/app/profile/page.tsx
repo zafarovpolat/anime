@@ -418,7 +418,7 @@ export default function ProfilePage() {
             className={`profile-mobile-tabs__item${activeTab === 'logout' ? ' profile-mobile-tabs__item--active' : ''}`}
           >
             <LogoutIcon />
-            Настройки аккаунта
+            Выйти
           </button>
         </div>
 
