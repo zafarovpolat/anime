@@ -4,8 +4,9 @@
 
 /* @font-face — SONGER SemiExpanded */
 @font-face {
-  font-family: 'SONGER SemiExpanded';
-  src: url('/fonts/SONGER SemiExpanded/songersemiexpanded_heavy.otf') format('opentype');
+  font-family: "SONGER SemiExpanded";
+  src: url("/fonts/SONGER SemiExpanded/songersemiexpanded_heavy.otf")
+    format("opentype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -13,40 +14,40 @@
 
 /* @font-face — Golos Text */
 @font-face {
-  font-family: 'Golos Text';
-  src: url('/fonts/Golos/golostext_regular.ttf') format('truetype');
+  font-family: "Golos Text";
+  src: url("/fonts/Golos/golostext_regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Golos Text';
-  src: url('/fonts/Golos/golostext_medium.ttf') format('truetype');
+  font-family: "Golos Text";
+  src: url("/fonts/Golos/golostext_medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Golos Text';
-  src: url('/fonts/Golos/golostext_demibold.ttf') format('truetype');
+  font-family: "Golos Text";
+  src: url("/fonts/Golos/golostext_demibold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Golos Text';
-  src: url('/fonts/Golos/golostext_bold.ttf') format('truetype');
+  font-family: "Golos Text";
+  src: url("/fonts/Golos/golostext_bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Golos Text';
-  src: url('/fonts/Golos/golostext_black.ttf') format('truetype');
+  font-family: "Golos Text";
+  src: url("/fonts/Golos/golostext_black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -54,21 +55,21 @@
 
 :root {
   /* Colors */
-  --color-bg: #F9F9FB;
-  --color-white: #FFFFFF;
+  --color-bg: #f9f9fb;
+  --color-white: #ffffff;
   --color-black: #000000;
-  --color-primary: #562CF0;
+  --color-primary: #562cf0;
   --color-primary-hover: #562cf0e0;
-  --color-green: #45B346;
-  --color-gray-text: #97989B;
-  --color-gray-light: #E5E5E5;
+  --color-green: #45b346;
+  --color-gray-text: #97989b;
+  --color-gray-light: #e5e5e5;
   --color-gray-border: #00000010;
-  --color-dark: #2D2D3A;
-  --color-link: #6C5CE7;
+  --color-dark: #2d2d3a;
+  --color-link: #6c5ce7;
 
   /* Typography */
-  --font-heading: 'SONGER SemiExpanded', 'Impact', 'Arial Black', sans-serif;
-  --font-body: 'Golos Text', sans-serif;
+  --font-heading: "SONGER SemiExpanded", "Impact", "Arial Black", sans-serif;
+  --font-body: "Golos Text", sans-serif;
 
   /* Spacing */
   --container-width: 1350px;
@@ -114,7 +115,8 @@ a {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -211,7 +213,9 @@ button {
   color: var(--color-black);
   padding: 0 20px;
   border-radius: var(--radius-badge);
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -249,9 +253,11 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-badge);
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
   color: var(--color-black);
-  background-color: #F9F9FA;
+  background-color: #f9f9fa;
 }
 
 .header__action-btn:hover {
@@ -260,7 +266,10 @@ button {
 }
 
 .header__action-btn svg path {
-  transition: fill 0.2s, stroke 0.2s, opacity 0.2s;
+  transition:
+    fill 0.2s,
+    stroke 0.2s,
+    opacity 0.2s;
 }
 
 .header__action-btn.btn-search:hover svg path {
@@ -338,7 +347,7 @@ button {
   width: 59px;
   height: 59px;
   border-radius: var(--radius-pill);
-  background-color: #F4F7FB;
+  background-color: #f4f7fb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -367,7 +376,7 @@ button {
 .carousel-btns {
   display: flex;
   gap: 5px;
-  background-color: #F4F7FB;
+  background-color: #f4f7fb;
   border-radius: var(--radius-card);
   padding: 9px;
 }
@@ -380,7 +389,9 @@ button {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  transition: border-color 0.2s, background-color 0.2s;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
 }
 
 .carousel-btn--active {
@@ -599,7 +610,6 @@ button {
    ========================================== */
 
 @media (min-width: 1440px) {
-
   .updates-wrapper {
     max-width: 90vw;
   }
@@ -657,18 +667,26 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--color-primary);
+  background-color: #afafaf;
+  border: 1.5px solid #afafaf;
   border-radius: 18px;
-  transition: background-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.toggle-switch input:checked + .toggle-switch__slider {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .toggle-switch__slider::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 23px;
   height: 23px;
   left: 4px;
-  bottom: 4px;
+  bottom: 3px;
   background-color: var(--color-white);
   border-radius: 50%;
   transition: transform 0.3s;
@@ -692,7 +710,7 @@ button {
   padding: 10px 30px 10px 10px;
   border-radius: var(--radius-pill);
   transition: background-color 0.15s;
-  background: #F4F7FB;
+  background: #f4f7fb;
   text-decoration: none;
   color: inherit;
 }
@@ -754,7 +772,9 @@ button {
   border: 1.5px solid var(--color-primary);
   border-radius: var(--radius-card);
   background-color: transparent;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
   width: 100%;
   max-width: 400px;
   min-height: 64px;
@@ -1714,8 +1734,6 @@ button {
   }
 }
 
-
-
 /* ==========================================
    MANGA INNER PAGE (Detail) — Strict Figma
    ========================================== */
@@ -1768,11 +1786,11 @@ button {
 .manga-inner__read-btn {
   width: 323px;
   height: 79px;
-  background: #562CF0;
+  background: #562cf0;
   color: #fff;
   border: none;
   border-radius: 16px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -1792,10 +1810,10 @@ button {
   width: 323px;
   height: 75px;
   background: #fff;
-  color: #180F2A;
+  color: #180f2a;
   border: none;
   border-radius: 16px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -1825,7 +1843,7 @@ button {
 }
 
 .manga-inner__tag {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 14px;
   color: var(--color-gray-text);
   display: flex;
@@ -1834,15 +1852,15 @@ button {
 }
 
 .manga-inner__tag-sep {
-  color: #97989B;
+  color: #97989b;
   font-size: 14px;
 }
 
 .manga-inner__title {
-  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-family: "SONGER SemiExpanded", sans-serif;
   font-size: 32px;
   font-weight: 800;
-  color: #180F2A;
+  color: #180f2a;
   text-transform: uppercase;
   margin: 0 0 12px 0;
   letter-spacing: 0.02em;
@@ -1858,9 +1876,9 @@ button {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 /* Header row: text-group (left) + rating-group (right) */
@@ -1893,15 +1911,15 @@ button {
 }
 
 .manga-inner__rating-score {
-  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-family: "SONGER SemiExpanded", sans-serif;
   font-size: 48px;
   font-weight: 800;
-  color: #180F2A;
+  color: #180f2a;
   line-height: 1;
 }
 
 .manga-inner__rating-count {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   color: #767676;
 }
@@ -1909,11 +1927,11 @@ button {
 .manga-inner__rating-btn {
   width: 110px;
   height: 54px;
-  background: #562CF0;
+  background: #562cf0;
   color: #fff;
   border: none;
   border-radius: 12px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -1933,7 +1951,7 @@ button {
 /* ── Tabs ── */
 .manga-inner__tabs {
   display: flex;
-  background: #F9F9FA;
+  background: #f9f9fa;
   padding: 10px;
   border-radius: 30px;
   gap: 5px;
@@ -1945,10 +1963,10 @@ button {
   flex: 1;
   height: 65px;
   border: none;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #180F2A;
+  color: #180f2a;
   cursor: pointer;
   transition: all 0.2s;
   border-radius: 20px;
@@ -1973,7 +1991,7 @@ button {
 }
 
 .manga-inner__description p {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   color: #333;
   line-height: 1.7;
@@ -1988,14 +2006,14 @@ button {
 .manga-inner__new-chapters {
   padding: 20px;
   border-radius: 20px;
-  background-color: #F9F9FA;
+  background-color: #f9f9fa;
 }
 
 .manga-inner__new-chapters-title {
-  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-family: "SONGER SemiExpanded", sans-serif;
   font-size: 18px;
   font-weight: 800;
-  color: #180F2A;
+  color: #180f2a;
   text-transform: uppercase;
   margin: 0 0 18px;
 }
@@ -2023,16 +2041,16 @@ button {
 }
 
 .manga-inner__chapter-num {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 25px;
   font-weight: 500;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 .manga-inner__chapter-label {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
-  color: #97989B;
+  color: #97989b;
   margin-top: 14px;
 }
 
@@ -2048,9 +2066,9 @@ button {
   display: flex;
   align-items: center;
   gap: 20px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 14px;
-  color: #97989B;
+  color: #97989b;
 }
 
 .manga-inner__chapters-reverse {
@@ -2059,14 +2077,14 @@ button {
   gap: 8px;
   background: none;
   border: none;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 14px;
-  color: #180F2A;
+  color: #180f2a;
   cursor: pointer;
 }
 
 .manga-inner__chapters-reverse:hover {
-  color: #562CF0;
+  color: #562cf0;
 }
 
 .manga-inner__chapters-list {
@@ -2097,28 +2115,28 @@ button {
 }
 
 .manga-inner__chapter-row-vol {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 17px;
   font-weight: 600;
-  color: #180F2A;
+  color: #180f2a;
   display: flex;
   align-items: center;
   gap: 17px;
 }
 
 .manga-inner__chapter-row-vol::after {
-  content: '';
+  content: "";
   display: block;
   width: 1px;
   height: 20px;
-  background: #DCDCDC;
+  background: #dcdcdc;
 }
 
 .manga-inner__chapter-row-ch {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #180F2A;
+  color: #180f2a;
   margin-left: 17px;
 }
 
@@ -2129,27 +2147,27 @@ button {
 }
 
 .manga-inner__chapter-row-date {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 17px;
-  color: #97989B;
+  color: #97989b;
 }
 
 .manga-inner__chapter-row-views {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 17px;
   font-weight: 500;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 /* ── Reviews/Comments tab ── */
 .manga-inner__comments-title {
-  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-family: "SONGER SemiExpanded", sans-serif;
   font-size: 32px;
   font-weight: 800;
-  color: #180F2A;
+  color: #180f2a;
   text-transform: uppercase;
   margin: 0 0 20px;
   display: flex;
@@ -2159,10 +2177,10 @@ button {
 }
 
 .manga-inner__comments-title span {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 17px;
   font-weight: 400;
-  color: #97989B;
+  color: #97989b;
 }
 
 .manga-inner__comment-input {
@@ -2170,7 +2188,7 @@ button {
   align-items: center;
   gap: 12px;
   margin-bottom: 28px;
-  background: #F9F9FA;
+  background: #f9f9fa;
   border-radius: 20px;
   padding: 19px 25px 19px 25px;
 }
@@ -2180,20 +2198,20 @@ button {
   border: none;
   background: transparent;
   padding: 0;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
   outline: none;
 }
 
 .manga-inner__comment-input input::placeholder {
-  color: #BDBDBD;
+  color: #bdbdbd;
 }
 
 .manga-inner__comment-send {
   width: 46px;
   height: 46px;
-  background: #562CF0;
+  background: #562cf0;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -2240,7 +2258,7 @@ button {
 
 .manga-inner__comment-top {
   padding: 20px;
-  background-color: #F9F9FA;
+  background-color: #f9f9fa;
   border-radius: 20px;
   margin-bottom: 10px;
   gap: 15px;
@@ -2253,10 +2271,10 @@ button {
 }
 
 .manga-inner__comment-name {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 .manga-inner__comment-menu {
@@ -2267,7 +2285,7 @@ button {
 }
 
 .manga-inner__comment-text {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   color: #999999;
   line-height: 1.5;
@@ -2280,21 +2298,21 @@ button {
 }
 
 .manga-inner__comment-time {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
-  color: #97989B;
+  color: #97989b;
 }
 
 .manga-inner__comment-reply {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #97989B;
+  color: #97989b;
   font-weight: 600;
   cursor: pointer;
 }
 
 .manga-inner__comment-reply:hover {
-  color: #562CF0;
+  color: #562cf0;
 }
 
 .manga-inner__comment-reactions {
@@ -2309,17 +2327,17 @@ button {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #97989B;
+  color: #97989b;
   cursor: pointer;
 }
 
 .manga-inner__show-more {
   background: none;
   border: none;
-  color: #562CF0;
-  font-family: 'Golos Text', sans-serif;
+  color: #562cf0;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -2420,7 +2438,6 @@ button {
   }
 }
 
-
 /* ==========================================
    MANGA TOOLBAR (Right sidebar)
    ========================================== */
@@ -2458,24 +2475,24 @@ button {
 }
 
 .manga-toolbar__counter-current {
-  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-family: "SONGER SemiExpanded", sans-serif;
   font-size: 20px;
   font-weight: 800;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 .manga-toolbar__counter-sep {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 13px;
-  color: #97989B;
+  color: #97989b;
   margin: 2px 0;
 }
 
 .manga-toolbar__counter-total {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 .manga-toolbar__btn {
@@ -2488,17 +2505,17 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #180F2A;
+  color: #180f2a;
   transition: all 0.2s;
 }
 
 .manga-toolbar__btn:hover {
   background: #f0ecff;
-  color: #562CF0;
+  color: #562cf0;
 }
 
 .manga-toolbar__btn--active {
-  background: #562CF0;
+  background: #562cf0;
   color: #fff;
 }
 
@@ -2527,10 +2544,10 @@ button {
 }
 
 .manga-toolbar__panel-title {
-  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-family: "SONGER SemiExpanded", sans-serif;
   font-size: 16px;
   font-weight: 800;
-  color: #180F2A;
+  color: #180f2a;
   text-transform: uppercase;
   margin: 0;
 }
@@ -2554,9 +2571,9 @@ button {
 
 .manga-toolbar__panel-sort {
   padding: 0 20px 12px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 13px;
-  color: #97989B;
+  color: #97989b;
 }
 
 .manga-toolbar__panel-list {
@@ -2582,19 +2599,19 @@ button {
 }
 
 .manga-toolbar__panel-row-title {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 .manga-toolbar__panel-row-meta {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 12px;
-  color: #97989B;
+  color: #97989b;
 }
 
 .manga-toolbar__panel-row-meta span {
@@ -2641,16 +2658,16 @@ button {
 }
 
 .manga-toolbar__comment-name {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 13px;
   font-weight: 600;
-  color: #180F2A;
+  color: #180f2a;
   display: block;
   margin-bottom: 3px;
 }
 
 .manga-toolbar__comment-text {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 12px;
   color: #333;
   line-height: 1.4;
@@ -2658,9 +2675,9 @@ button {
 }
 
 .manga-toolbar__comment-time {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 11px;
-  color: #97989B;
+  color: #97989b;
 }
 
 /* ── Toolbar dropdown (bookmarks) ── */
@@ -2678,10 +2695,10 @@ button {
 }
 
 .manga-toolbar__dropdown-title {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #180F2A;
+  color: #180f2a;
   margin: 0;
 }
 
@@ -2693,9 +2710,9 @@ button {
   padding: 10px 16px;
   background: none;
   border: none;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 13px;
-  color: #180F2A;
+  color: #180f2a;
   cursor: pointer;
   text-align: left;
   transition: background 0.15s;
@@ -2703,14 +2720,14 @@ button {
 
 .manga-toolbar__dropdown-item:hover {
   background: #f0ecff;
-  color: #562CF0;
+  color: #562cf0;
 }
 
 .manga-toolbar__dropdown-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #562CF0;
+  background: #562cf0;
 }
 
 /* ── Toolbar responsive ── */
@@ -2740,7 +2757,6 @@ button {
   }
 }
 
-
 /* ==========================================
    PROFILE PAGE — Strict Figma
    ========================================== */
@@ -2756,9 +2772,13 @@ button {
   border-radius: 25px;
   position: relative;
   height: 222px;
-  background: 
-    linear-gradient(180deg, rgba(24, 15, 42, 0.7) 16.61%, rgba(82, 51, 144, 0.7) 97.66%),
-    url('/images/profile-bg.png') center/cover no-repeat;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(24, 15, 42, 0.7) 16.61%,
+      rgba(82, 51, 144, 0.7) 97.66%
+    ),
+    url("/images/profile-bg.png") center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -2780,7 +2800,7 @@ button {
   height: 139px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid rgba(255,255,255,0.3);
+  border: 3px solid rgba(255, 255, 255, 0.3);
   flex-shrink: 0;
 }
 
@@ -2795,7 +2815,7 @@ button {
 }
 
 .profile-banner__name {
-  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-family: "SONGER SemiExpanded", sans-serif;
   font-size: 30px;
   font-weight: 800;
   color: #fff;
@@ -2804,9 +2824,9 @@ button {
 }
 
 .profile-banner__status {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
 }
 
@@ -2820,7 +2840,7 @@ button {
   border-bottom: 1px solid #e5e5e5;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: #ECECEF transparent;
+  scrollbar-color: #ececef transparent;
 }
 
 .profile-mobile-tabs::-webkit-scrollbar {
@@ -2840,7 +2860,7 @@ button {
 }
 
 .profile-mobile-tabs::-webkit-scrollbar-thumb {
-  background: #ECECEF;
+  background: #ececef;
   border-radius: 4px;
 }
 
@@ -2853,15 +2873,15 @@ button {
   background: none;
   border: none;
   border-radius: 20px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 13px;
-  color: #180F2A;
+  color: #180f2a;
   cursor: pointer;
   white-space: nowrap;
 }
 
 .profile-mobile-tabs__item--active {
-  background: #F9F9FA;
+  background: #f9f9fa;
 }
 
 /* ── Profile body layout ── */
@@ -2900,10 +2920,10 @@ button {
   border: none;
   border-radius: 20px;
   min-height: 81px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #180F2A;
+  color: #180f2a;
   cursor: pointer;
   transition: background 0.18s;
   text-align: left;
@@ -2911,21 +2931,21 @@ button {
 }
 
 .profile-sidebar__item svg path {
-  fill: #97989B;
+  fill: #97989b;
 }
 
 .profile-sidebar__item--active {
-  background: #F9F9FA;
-  color: #180F2A;
+  background: #f9f9fa;
+  color: #180f2a;
 }
 
 .profile-sidebar__item--active svg path {
-  fill: #97989B;
+  fill: #97989b;
 }
 
 .profile-sidebar__divider {
   height: 1px;
-  background: #E8E8EC;
+  background: #e8e8ec;
   margin: 25px 0;
 }
 
@@ -2935,13 +2955,13 @@ button {
   gap: 10px;
   min-height: 80px;
   padding: 0 25px;
-  background: #F9F9FA;
+  background: #f9f9fa;
   border: none;
   border-radius: 16px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #FF4D4F;
+  color: #ff4d4f;
   cursor: pointer;
   width: 100%;
   text-align: left;
@@ -2949,7 +2969,7 @@ button {
 }
 
 .profile-sidebar__logout:hover {
-  background: #FFE9E9;
+  background: #ffe9e9;
 }
 
 .profile-mobile-logout {
@@ -2964,10 +2984,10 @@ button {
 }
 
 .profile-content__title {
-  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-family: "SONGER SemiExpanded", sans-serif;
   font-size: 30px;
   font-weight: 800;
-  color: #180F2A;
+  color: #180f2a;
   text-transform: uppercase;
   margin: 0 0 24px;
   letter-spacing: 0.02em;
@@ -3001,10 +3021,10 @@ button {
 }
 
 .profile-form__label {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
   padding-left: 20px;
-  color: #97989B;
+  color: #97989b;
 }
 
 .profile-form__input-wrap {
@@ -3021,9 +3041,9 @@ button {
   height: 100%;
   border: none;
   padding: 0 20px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
   background: transparent;
   outline: none;
 }
@@ -3033,9 +3053,9 @@ button {
   height: 100%;
   border: none;
   padding: 0 20px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
   background: transparent;
   outline: none;
   cursor: pointer;
@@ -3063,9 +3083,9 @@ button {
   padding: 0 20px;
   background: transparent;
   border: none;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
   cursor: pointer;
   text-align: left;
 }
@@ -3086,15 +3106,21 @@ button {
   right: 0;
   background: #fff;
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   z-index: 100;
   animation: selectDropIn 0.18s ease;
 }
 
 @keyframes selectDropIn {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .custom-select__option {
@@ -3102,21 +3128,21 @@ button {
   padding: 14px 20px;
   background: none;
   border: none;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
   cursor: pointer;
   text-align: left;
   transition: background 0.15s;
 }
 
 .custom-select__option:hover {
-  background: #F9F9FA;
+  background: #f9f9fa;
 }
 
 .custom-select__option--active {
-  background: #F9F9FA;
-  color: #562CF0;
+  background: #f9f9fa;
+  color: #562cf0;
 }
 
 .profile-form__edit-btn {
@@ -3133,26 +3159,26 @@ button {
   min-height: 190px;
   border-radius: 15px;
   padding: 20px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
   resize: vertical;
   outline: none;
   border: none;
 }
 
 .profile-form__textarea::placeholder {
-  color: #97989B;
+  color: #97989b;
 }
 
 .profile-form__save {
   max-width: 247px;
   height: 79px;
-  background: #562CF0;
+  background: #562cf0;
   color: #fff;
   border: none;
   border-radius: 15px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -3171,11 +3197,11 @@ button {
   border-radius: 25px;
   padding: 19px 15px;
   display: grid;
-    -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: #ECECEF transparent;
+  scrollbar-color: #ececef transparent;
   overflow-x: auto;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .profile-bookmarks__filter {
@@ -3186,10 +3212,10 @@ button {
   border-radius: 20px;
   border: none;
   background: none;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #180F2A;
+  color: #180f2a;
   cursor: pointer;
   transition: background 0.18s;
   min-height: 65px;
@@ -3202,8 +3228,8 @@ button {
 }
 
 .profile-bookmarks__filter--active {
-  background: #F9F9FA;
-  color: #180F2A;
+  background: #f9f9fa;
+  color: #180f2a;
 }
 
 .profile-bookmarks__toolbar {
@@ -3216,9 +3242,9 @@ button {
 .profile-bookmarks__edit {
   background: none;
   border: none;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
-  color: #97989B;
+  color: #97989b;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -3229,9 +3255,9 @@ button {
 .profile-bookmarks__sort {
   background: none;
   border: none;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 14px;
-  color: #180F2A;
+  color: #180f2a;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -3274,18 +3300,18 @@ button {
 }
 
 .profile-bookmark-item__title {
-  font-family: 'SONGER SemiExpanded', sans-serif;
+  font-family: "SONGER SemiExpanded", sans-serif;
   font-size: 20px;
   font-weight: 800;
-  color: #180F2A;
+  color: #180f2a;
   margin: 0 0 7px;
   text-transform: uppercase;
 }
 
 .profile-bookmark-item__tags {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
-  color: #97989B;
+  color: #97989b;
   margin: 0;
   display: flex;
   align-items: center;
@@ -3297,11 +3323,11 @@ button {
   flex-shrink: 0;
   padding: 0 30px;
   min-height: 79px;
-  background: #562CF0;
+  background: #562cf0;
   color: #fff;
   border: none;
   border-radius: 15px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -3343,7 +3369,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: #DDDDE0;
+  background: #dddde0;
 }
 
 .profile-comment-item__body {
@@ -3368,10 +3394,10 @@ button {
 }
 
 .profile-comment-item__name {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 .profile-comment-item__menu-wrap {
@@ -3390,7 +3416,7 @@ button {
 }
 
 .profile-comment-item__menu:hover {
-  background: #F2F2F4;
+  background: #f2f2f4;
 }
 
 .comment-menu-overlay {
@@ -3416,8 +3442,14 @@ button {
 }
 
 @keyframes commentMenuIn {
-  from { opacity: 0; transform: scale(0.95) translateY(-4px); }
-  to   { opacity: 1; transform: scale(1)    translateY(0); }
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .comment-menu-dropdown__item {
@@ -3426,25 +3458,25 @@ button {
   border: none;
   border-radius: 14px;
   background: none;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #180F2A;
+  color: #180f2a;
   text-align: left;
   cursor: pointer;
   transition: background 0.15s;
 }
 
 .comment-menu-dropdown__item--active {
-  background: #F2F2F4;
+  background: #f2f2f4;
 }
 
 .comment-menu-dropdown__item:hover {
-  background: #F5F5F7;
+  background: #f5f5f7;
 }
 
 .profile-comment-item__text {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #999999;
@@ -3461,15 +3493,15 @@ button {
 }
 
 .profile-comment-item__time {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
-  color: #97989B;
+  color: #97989b;
 }
 
 .profile-comment-item__link {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
-  color: #97989B;
+  color: #97989b;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
@@ -3490,9 +3522,9 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
-  color: #97989B;
+  color: #97989b;
   padding: 4px 8px;
   border-radius: 8px;
   transition: background 0.15s;
@@ -3500,7 +3532,7 @@ button {
 
 .profile-comment-item__like:hover,
 .profile-comment-item__dislike:hover {
-  background: #F5F5F7;
+  background: #f5f5f7;
 }
 
 /* ── History tab ── */
@@ -3532,27 +3564,27 @@ button {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: #2ECC71;
+  background: #2ecc71;
   color: #fff;
   padding: 4px 8px;
   border-radius: 6px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 12px;
   font-weight: 600;
 }
 
 .profile-history-card__title {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #180F2A;
+  color: #180f2a;
   margin: 0 0 4px;
 }
 
 .profile-history-card__genres {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 12px;
-  color: #97989B;
+  color: #97989b;
   margin: 0;
 }
 
@@ -3590,19 +3622,19 @@ button {
 
 .profile-social-item__name {
   flex: 1;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 .profile-social-item__btn {
   padding: 0 20px;
-  background: #562CF0;
+  background: #562cf0;
   color: #fff;
   border: none;
   border-radius: 15px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -4218,9 +4250,9 @@ button {
     padding: 7px 10px;
     font-size: 13px;
   }
-.profile-mobile-tabs__item svg {
-  width: 18px;
-}
+  .profile-mobile-tabs__item svg {
+    width: 18px;
+  }
   /* Content */
   .profile-content {
     padding: 0 0 16px 0;
@@ -4240,16 +4272,16 @@ button {
     background: #ffffff;
     border: none;
     border-radius: 16px;
-    font-family: 'Golos Text', sans-serif;
+    font-family: "Golos Text", sans-serif;
     font-size: 15px;
     font-weight: 400;
-    color: #FF4D4F;
+    color: #ff4d4f;
     cursor: pointer;
     width: 100%;
     transition: background 0.18s;
   }
   .profile-mobile-logout:hover {
-    background: #FFE9E9;
+    background: #ffe9e9;
   }
 
   .profile-banner .container {
@@ -4275,7 +4307,7 @@ button {
     min-height: 71px;
     border-radius: 15px;
   }
-  .profile-form__edit-btn svg{
+  .profile-form__edit-btn svg {
     width: 14px;
   }
   .profile-form__input,
@@ -4322,7 +4354,7 @@ button {
     font-size: 13px;
     gap: 10px;
   }
-  .profile-page-main .catalog-sort-btn{
+  .profile-page-main .catalog-sort-btn {
     font-size: 13px;
     margin-bottom: 15px;
   }
@@ -4624,7 +4656,9 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  transition: background-color 0.15s, color 0.15s;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
 }
 
 .catalog-page-btn:hover {
@@ -4658,7 +4692,9 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  transition: background-color 0.15s, color 0.15s;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
 }
 
 .catalog-page-next:hover {
@@ -4712,7 +4748,7 @@ button {
 
 /* Filter block (white card) */
 .catalog-filter__block {
-  background: #F9F9FB;
+  background: #f9f9fb;
   border-radius: 15px;
   padding: 20px;
   display: flex;
@@ -4727,7 +4763,7 @@ button {
 }
 
 .catalog-filter__block:nth-child(2) .catalog-filter__input-wrap {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   padding: 20px 22px;
 }
 
@@ -4737,7 +4773,6 @@ button {
 
 .catalog-filter__block:nth-child(4) {
   padding: 31px 20px;
-
 }
 
 /* Input with icon */
@@ -4808,7 +4843,7 @@ button {
   overflow-y: auto;
   padding-right: 2px;
   scrollbar-width: thin;
-  scrollbar-color: #180F2A #EAECED;
+  scrollbar-color: #180f2a #eaeced;
 }
 
 .catalog-filter__genres-list::-webkit-scrollbar {
@@ -4827,12 +4862,12 @@ button {
 }
 
 .catalog-filter__genres-list::-webkit-scrollbar-track {
-  background: #EAECED;
+  background: #eaeced;
   border-radius: 4px;
 }
 
 .catalog-filter__genres-list::-webkit-scrollbar-thumb {
-  background: #180F2A;
+  background: #180f2a;
   border-radius: 4px;
 }
 
@@ -4851,13 +4886,15 @@ button {
   width: 24px;
   height: 24px;
   border-radius: 6px;
-  border: 1.5px solid #D0D0D0;
+  border: 1.5px solid #d0d0d0;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
   flex-shrink: 0;
   background: transparent;
-  transition: border-color 0.15s, background-color 0.15s;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s;
   position: relative;
 }
 
@@ -4867,10 +4904,10 @@ button {
 }
 
 .catalog-filter__checkbox:checked::after {
-  content: '';
+  content: "";
   position: absolute;
-  top: 2px;
-  left: 5px;
+  top: calc(50% - (9px / 2));
+  left: calc(50% - (5px / 2));
   width: 5px;
   height: 9px;
   border: 2px solid white;
@@ -4921,7 +4958,7 @@ button {
   margin: 0;
 }
 
-.catalog-filter__range-input[type=number] {
+.catalog-filter__range-input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -4941,9 +4978,11 @@ button {
   font-weight: 400;
   color: var(--color-gray-text);
   background: transparent;
-  border: 1px solid #E8E8E8;
+  border: 1px solid #e8e8e8;
   cursor: pointer;
-  transition: background-color 0.15s, color 0.15s;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
 }
 
 .catalog-filter__quick-btn:hover {
@@ -5052,8 +5091,14 @@ button {
   }
 
   @keyframes drawerDown {
-    from { transform: translateY(-100%); opacity: 0; }
-    to   { transform: translateY(0);    opacity: 1; }
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   /* Scrollable content area */
@@ -5160,15 +5205,14 @@ button {
 }
 
 @media (max-width: 540px) {
-
   .catalog-section .container {
     padding-top: 25px;
   }
 
-/* Mobile title divider — hidden on desktop */
-.catalog-title-divider {
-  display: none;
-}
+  /* Mobile title divider — hidden on desktop */
+  .catalog-title-divider {
+    display: none;
+  }
 
   /* Title row: title top, buttons below in 2-col grid */
   .catalog-title-row {
@@ -5189,7 +5233,7 @@ button {
     display: block;
     grid-column: 1 / -1;
     height: 1.5px;
-    background: #EBEBEB;
+    background: #ebebeb;
     border: none;
   }
 
@@ -5210,7 +5254,9 @@ button {
     font-size: 13px;
   }
 
-    .catalog-filter__block, .catalog-filter__block:nth-child(4),.catalog-filter__block:nth-child(2){
+  .catalog-filter__block,
+  .catalog-filter__block:nth-child(4),
+  .catalog-filter__block:nth-child(2) {
     padding: 15px;
   }
 
@@ -5228,7 +5274,7 @@ button {
 
   .catalog-filter__input-wrap {
     gap: 10px;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
   }
 
   .catalog-grid {
@@ -5251,7 +5297,6 @@ button {
   .catalog-page-next {
     padding: 0 7px;
     font-size: 13px;
-
   }
 }
 
@@ -5278,8 +5323,12 @@ button {
 }
 
 @keyframes overlayIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .login-modal {
@@ -5297,8 +5346,14 @@ button {
 }
 
 @keyframes modalIn {
-  from { opacity: 0; transform: scale(0.94) translateY(10px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* Close button */
@@ -5349,7 +5404,7 @@ button {
   display: flex;
   align-items: center;
   gap: 14px;
-  background: #F5F5F7;
+  background: #f5f5f7;
   border-radius: 25px;
   padding: 27px 20px;
   margin-bottom: 15px;
@@ -5379,14 +5434,14 @@ button {
 }
 
 .login-modal__input::placeholder {
-  color: #9B9FAA;
+  color: #9b9faa;
 }
 
 /* Submit button */
 .login-modal__submit {
   width: 100%;
   padding: 30px;
-  background: #5B35E8;
+  background: #5b35e8;
   border: none;
   border-radius: 25px;
   font-family: var(--font-body);
@@ -5394,7 +5449,9 @@ button {
   font-weight: 700;
   color: #ffffff;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.15s;
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
   margin-bottom: 15px;
 }
 
@@ -5432,7 +5489,7 @@ button {
 .login-modal__divider-line {
   flex: 1;
   height: 1px;
-  background: #E5E5E5;
+  background: #e5e5e5;
 }
 
 .login-modal__divider-text {
@@ -5456,15 +5513,17 @@ button {
   align-items: center;
   justify-content: center;
   height: 60px;
-  background: #F5F5F7;
+  background: #f5f5f7;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.15s, transform 0.15s;
+  transition:
+    background-color 0.15s,
+    transform 0.15s;
 }
 
 .login-modal__social-btn:hover {
-  background: #EAEAED;
+  background: #eaeaed;
 }
 
 .login-modal__social-btn:active {
@@ -5475,7 +5534,7 @@ button {
 .login-modal__register {
   font-size: 15px;
   font-weight: 600;
-  color: #9B9FAA;
+  color: #9b9faa;
   margin: 0 0 30px;
   display: flex;
   align-items: center;
@@ -5497,7 +5556,7 @@ button {
 .login-modal__legal {
   font-size: 14px;
   font-weight: 400;
-  color: #9B9FAA;
+  color: #9b9faa;
   text-align: center;
   margin: 0;
   line-height: 1.6;
@@ -5506,18 +5565,18 @@ button {
 .login-modal__legal em {
   font-style: normal;
   font-weight: 400;
-  color: #9B9FAA;
+  color: #9b9faa;
 }
 
 .login-modal__legal-dark {
-  color: #0F172A;
+  color: #0f172a;
 }
 
 .login-modal__legal-link {
-  color: #0F172A;
+  color: #0f172a;
   text-decoration: underline;
   text-underline-offset: 2px;
-  text-decoration-color: #0F172A;
+  text-decoration-color: #0f172a;
   transition: opacity 0.15s;
 }
 
@@ -5630,20 +5689,24 @@ button {
 .manga-main {
   position: relative;
   padding-top: 0;
-  background-image: url('/images/manga-bg.png');
+  background-image: url("/images/manga-bg.png");
   background-size: 100% 700px;
   background-position: top center;
   background-repeat: no-repeat;
 }
 
 .manga-main::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 700px;
-  background: linear-gradient(180deg, rgba(249, 249, 251, 0.9) 16.61%, #F9F9FB 86.25%);
+  background: linear-gradient(
+    180deg,
+    rgba(249, 249, 251, 0.9) 16.61%,
+    #f9f9fb 86.25%
+  );
   z-index: 1;
   pointer-events: none;
 }
@@ -5668,7 +5731,7 @@ button {
   align-items: center;
   gap: 10px;
   background: #fff;
-  border: 1px solid #EBEBEB;
+  border: 1px solid #ebebeb;
   border-radius: 25px;
   padding: 28px 25px;
 }
@@ -5678,13 +5741,13 @@ button {
   border: none;
   outline: none;
   background: transparent;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 .manga-inner__chapters-search-input::placeholder {
-  color: #BDBDBD;
+  color: #bdbdbd;
 }
 
 .manga-inner__chapters-reverse {
@@ -5694,7 +5757,7 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
   color: var(--color-black);
   white-space: nowrap;
@@ -5709,8 +5772,8 @@ button {
 .manga-inner__chapters-empty {
   text-align: center;
   padding: 40px 0;
-  color: #97989B;
-  font-family: 'Golos Text', sans-serif;
+  color: #97989b;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
 }
 
@@ -5792,7 +5855,7 @@ button {
     grid-template-columns: repeat(6, 1fr);
   }
 
-  .manga-inner__chapter-card:nth-child(n+7) {
+  .manga-inner__chapter-card:nth-child(n + 7) {
     display: none;
   }
 
@@ -5944,7 +6007,7 @@ button {
     grid-template-columns: repeat(5, 1fr);
   }
 
-  .manga-inner__chapter-card:nth-child(n+6) {
+  .manga-inner__chapter-card:nth-child(n + 6) {
     display: none;
   }
 
@@ -6027,7 +6090,8 @@ button {
     gap: 12px;
   }
 
-  .manga-inner__rating-score,.manga-inner__rating-count {
+  .manga-inner__rating-score,
+  .manga-inner__rating-count {
     text-align: left;
   }
 
@@ -6035,7 +6099,8 @@ button {
     font-size: 12px;
   }
 
-  .manga-inner__left,.manga-inner__header-row {
+  .manga-inner__left,
+  .manga-inner__header-row {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -6071,11 +6136,11 @@ button {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .manga-inner__chapter-card:nth-child(n+5) {
+  .manga-inner__chapter-card:nth-child(n + 5) {
     display: none;
   }
 
-  .manga-inner__chapter-card:nth-child(-n+4) {
+  .manga-inner__chapter-card:nth-child(-n + 4) {
     display: flex;
   }
 
@@ -6083,12 +6148,13 @@ button {
     padding: 0;
   }
 
-  .manga-inner__chapters-search{
+  .manga-inner__chapters-search {
     padding: 22px 20px;
     border-radius: 15px;
   }
 
-  .manga-inner__chapters-search-input,.manga-inner__chapters-reverse {
+  .manga-inner__chapters-search-input,
+  .manga-inner__chapters-reverse {
     font-size: 14px;
   }
 
@@ -6225,19 +6291,19 @@ button {
 }
 
 @media (max-width: 1440px) {
-  :root{
+  :root {
     --reader-header-h: 87px;
   }
 }
 
 @media (max-width: 1280px) {
-  :root{
+  :root {
     --reader-header-h: 83px;
   }
 }
 
 @media (max-width: 1024px) {
-  :root{
+  :root {
     --reader-header-h: 72px;
   }
 }
@@ -6246,7 +6312,7 @@ button {
 .reader {
   display: flex;
   min-height: calc(100vh - var(--reader-header-h));
-  background: #F9F9FA;
+  background: #f9f9fa;
   position: relative;
 }
 
@@ -6301,9 +6367,9 @@ button {
   top: -45px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 18px;
-  color: #180F2A;
+  color: #180f2a;
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
@@ -6320,8 +6386,11 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  color: #97989B;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+  color: #97989b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6330,17 +6399,17 @@ button {
 }
 
 .reader__sidebar-btn:hover {
-  color: #562CF0;
+  color: #562cf0;
 }
 
 .reader__sidebar-btn--active {
-  background: #F0EDFF;
-  color: #562CF0;
+  background: #f0edff;
+  color: #562cf0;
   box-shadow: none;
 }
 
 .reader__sidebar-count {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 11px;
   font-weight: 500;
   color: inherit;
@@ -6384,8 +6453,14 @@ button {
 }
 
 @keyframes readerPanelIn {
-  from { transform: translateX(100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Panel header */
@@ -6393,15 +6468,15 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
   flex-shrink: 0;
 }
 
 .reader__panel-title {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 20px;
   font-weight: 600;
-  color: #180F2A;
+  color: #180f2a;
   letter-spacing: 0.01em;
 }
 
@@ -6421,7 +6496,7 @@ button {
   justify-content: space-between;
   border-radius: 25px;
   min-height: 85px;
-  border: 1px solid #E8E8E8;
+  border: 1px solid #e8e8e8;
   margin-bottom: 20px;
 }
 
@@ -6432,7 +6507,7 @@ button {
   flex: 1;
   min-width: 0;
   border-radius: 50px;
-  color: #97989B;
+  color: #97989b;
   height: 100%;
   padding-left: 25px;
 }
@@ -6441,14 +6516,14 @@ button {
   flex: 1;
   border: none;
   background: transparent;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
   outline: none;
 }
 
 .reader__panel-search input::placeholder {
-  color: #B0B0B5;
+  color: #b0b0b5;
 }
 
 .reader__panel-sort {
@@ -6458,9 +6533,9 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
-  color: #180F2A;
+  color: #180f2a;
   white-space: nowrap;
   padding: 4px 0;
   transition: opacity 0.2s;
@@ -6493,7 +6568,7 @@ button {
 }
 
 .reader__panel-chapters-list::-webkit-scrollbar-thumb {
-  background: #E0E0E5;
+  background: #e0e0e5;
   border-radius: 4px;
 }
 
@@ -6502,7 +6577,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 0 30px 0 25px;
-  background: #F9F9FA;
+  background: #f9f9fa;
   border-radius: 20px;
   min-height: 92px;
   text-decoration: none;
@@ -6511,7 +6586,7 @@ button {
 }
 
 .reader__panel-chapter-row:hover {
-  background: #F0EDFF;
+  background: #f0edff;
 }
 
 .reader__panel-chapter-info {
@@ -6521,25 +6596,25 @@ button {
 }
 
 .reader__panel-chapter-vol {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 17px;
   font-weight: 500;
-  color: #180F2A;
+  color: #180f2a;
   white-space: nowrap;
 }
 
 .reader__panel-chapter-divider {
   width: 1px;
   height: 27px;
-  background: #D0D0D5;
+  background: #d0d0d5;
   flex-shrink: 0;
 }
 
 .reader__panel-chapter-ch {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #180F2A;
+  color: #180f2a;
   white-space: nowrap;
 }
 
@@ -6551,26 +6626,26 @@ button {
 }
 
 .reader__panel-chapter-date {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 17px;
   font-weight: 400;
-  color: #97989B;
+  color: #97989b;
 }
 
 .reader__panel-chapter-likes {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 17px;
   font-weight: 500;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 .reader__panel-chapter-likes svg {
   width: 20px;
   height: 20px;
-  color: #97989B;
+  color: #97989b;
 }
 
 /* ── Comments panel ── */
@@ -6580,19 +6655,19 @@ button {
   justify-content: space-between;
   border-radius: 25px;
   min-height: 85px;
-  border: 1px solid #E8E8E8;
+  border: 1px solid #e8e8e8;
   flex-shrink: 0;
   margin-bottom: 40px;
-  background-color: #F9F9FA;
+  background-color: #f9f9fa;
 }
 
 .reader__panel-comments-input {
   flex: 1;
   border: none;
   background: transparent;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
   outline: none;
   padding-left: 25px;
   height: 100%;
@@ -6600,14 +6675,14 @@ button {
 }
 
 .reader__panel-comments-input::placeholder {
-  color: #B0B0B5;
+  color: #b0b0b5;
 }
 
 .reader__panel-comments-send {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #562CF0;
+  background: #562cf0;
   border: none;
   display: flex;
   align-items: center;
@@ -6636,7 +6711,7 @@ button {
 }
 
 .reader__panel-comments-list::-webkit-scrollbar-thumb {
-  background: #E0E0E5;
+  background: #e0e0e5;
   border-radius: 4px;
 }
 
@@ -6656,7 +6731,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: #DDDDE0;
+  background: #dddde0;
 }
 
 .reader__panel-comment-body {
@@ -6665,7 +6740,7 @@ button {
 }
 
 .reader__panel-comment-top {
-  background: #F9F9FA;
+  background: #f9f9fa;
   border-radius: 20px;
   padding: 20px;
   margin-bottom: 10px;
@@ -6681,10 +6756,10 @@ button {
 }
 
 .reader__panel-comment-name {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #180F2A;
+  color: #180f2a;
 }
 
 .reader__panel-comment-menu {
@@ -6692,13 +6767,13 @@ button {
   border: none;
   cursor: pointer;
   font-size: 16px;
-  color: #97989B;
+  color: #97989b;
   padding: 0 2px;
   line-height: 1;
 }
 
 .reader__panel-comment-text {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #999999;
@@ -6713,23 +6788,23 @@ button {
 }
 
 .reader__panel-comment-time {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
-  color: #97989B;
+  color: #97989b;
 }
 
 .reader__panel-comment-reply {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
   font-weight: 600;
-  color: #97989B;
+  color: #97989b;
 }
 
 .reader__panel-comment-reply:hover {
-  color: #562CF0;
+  color: #562cf0;
 }
 
 .reader__panel-comment-reactions {
@@ -6747,9 +6822,9 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #97989B;
+  color: #97989b;
   transition: color 0.15s;
 }
 
@@ -6766,44 +6841,48 @@ button {
   align-items: center;
   gap: 14px;
   padding: 16px 18px;
-  background: #F9F9FA;
+  background: #f9f9fa;
   border: 2px solid transparent;
   border-radius: 16px;
   cursor: pointer;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 15px;
   font-weight: 500;
-  color: #180F2A;
-  transition: background 0.15s, border-color 0.15s;
+  color: #180f2a;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
   text-align: left;
 }
 
 .reader__panel-bookmark-opt:hover {
-  background: #F0EDFF;
+  background: #f0edff;
 }
 
 .reader__panel-bookmark-opt--active {
-  background: #F0EDFF;
-  border-color: #562CF0;
-  color: #562CF0;
+  background: #f0edff;
+  border-color: #562cf0;
+  color: #562cf0;
 }
 
 .reader__panel-bookmark-check {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  border: 2px solid #D0D0D5;
+  border: 2px solid #d0d0d5;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: background 0.15s, border-color 0.15s;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
   background: transparent;
 }
 
 .reader__panel-bookmark-opt--active .reader__panel-bookmark-check {
-  background: #562CF0;
-  border-color: #562CF0;
+  background: #562cf0;
+  border-color: #562cf0;
 }
 
 /* ── Bookmark mini popup ── */
@@ -6828,8 +6907,14 @@ button {
 }
 
 @keyframes bookmarkPopupIn {
-  from { opacity: 0; transform: scale(0.95) translateX(8px); }
-  to   { opacity: 1; transform: scale(1)    translateX(0);   }
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
 }
 
 .reader__bookmark-popup-header {
@@ -6840,10 +6925,10 @@ button {
 }
 
 .reader__bookmark-popup-title {
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 20px;
   font-weight: 600;
-  color: #180F2A;
+  color: #180f2a;
   text-transform: uppercase;
 }
 
@@ -6869,21 +6954,24 @@ button {
   min-height: 65px;
   border-radius: 20px;
   cursor: pointer;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #180F2A;
+  color: #180f2a;
   text-align: left;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
   width: 100%;
 }
 
 .reader__bookmark-popup-opt--active {
-  background: #F9F9FA;
+  background: #f9f9fa;
 }
 
 .reader__bookmark-popup-opt:hover {
-  background: #F0EDFF;
+  background: #f0edff;
 }
 
 .reader__bookmark-popup-icon {
@@ -6920,8 +7008,14 @@ button {
 }
 
 @keyframes bookmarkEditIn {
-  from { opacity: 0; transform: translate(-50%, -50%) scale(0.96); }
-  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .bookmark-edit-modal .reader__bookmark-popup-title {
@@ -6949,7 +7043,7 @@ button {
   gap: 10px;
   border-radius: 20px;
   padding: 0 25px 0;
-  border-top: 1px solid #EBEBED;
+  border-top: 1px solid #ebebed;
   min-height: 65px;
 }
 
@@ -6957,16 +7051,15 @@ button {
   flex: 1;
   border: none;
   outline: none;
-  font-family: 'Golos Text', sans-serif;
+  font-family: "Golos Text", sans-serif;
   font-size: 16px;
-  color: #180F2A;
+  color: #180f2a;
   background: transparent;
 }
 
 .bookmark-edit-modal__input::placeholder {
-  color: #B0B0B5;
+  color: #b0b0b5;
 }
-
 
 /* Mobile overlay */
 .reader__overlay {
@@ -6984,7 +7077,7 @@ button {
   }
 
   .reader__panel-title {
-    font-size: 18px; 
+    font-size: 18px;
   }
 
   .reader__panel-chapters-toolbar {
@@ -7151,9 +7244,9 @@ button {
   }
 
   .reader__sidebar-group {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .reader {
     padding-bottom: 110px;
     min-height: calc(100vh - var(--reader-header-h));
@@ -7198,7 +7291,7 @@ button {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 0;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
     gap: 10px;
   }
@@ -7211,7 +7304,7 @@ button {
     border-radius: 20px;
     gap: 6px;
     background: transparent;
-    color: #97989B;
+    color: #97989b;
   }
 
   .reader__sidebar-btn svg {
@@ -7220,8 +7313,8 @@ button {
   }
 
   .reader__sidebar-btn--active {
-    background: #F0EDFF;
-    color: #562CF0;
+    background: #f0edff;
+    color: #562cf0;
     box-shadow: none;
   }
 
@@ -7242,7 +7335,6 @@ button {
     max-width: calc(100% - 98px - 8px);
     padding: 5px 10px;
   }
-
 
   /* Solo bookmark button */
   .reader__sidebar-btn--solo {
@@ -7362,7 +7454,7 @@ button {
   .reader__panel-search {
     height: 68px;
     border-radius: 15px;
-    border: 1px solid #E8E8E8;
+    border: 1px solid #e8e8e8;
   }
 
   .reader__bookmark-popup {
@@ -7382,8 +7474,12 @@ button {
   }
 
   @keyframes readerPanelUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
   }
 
   /* Mobile overlay */
@@ -7397,21 +7493,24 @@ button {
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
 
 @media (max-width: 540px) {
-
   .reader__panel {
     padding: 20px;
   }
 
-.reader__sidebar-btn svg {
-  width: 24px;
-  height: 24px;
-}
+  .reader__sidebar-btn svg {
+    width: 24px;
+    height: 24px;
+  }
 
   .reader__panel-title {
     font-size: 20px;
@@ -7468,16 +7567,18 @@ button {
     width: 18px;
   }
 
-  .reader__panel-comment-like, .reader__panel-comment-dislike {
+  .reader__panel-comment-like,
+  .reader__panel-comment-dislike {
     font-size: 14px;
   }
 
-  .reader__panel-comment-menu svg{
+  .reader__panel-comment-menu svg {
     width: 21px;
     height: 21px;
   }
 
-  .reader__panel-comment-time,.reader__panel-comment-reply {
+  .reader__panel-comment-time,
+  .reader__panel-comment-reply {
     font-size: 12px;
   }
 
@@ -7494,4 +7595,3 @@ button {
     font-size: 13px;
   }
 }
-
