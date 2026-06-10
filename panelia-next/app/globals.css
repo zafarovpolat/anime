@@ -685,7 +685,7 @@ button {
   position: absolute;
   width: 23px;
   height: 23px;
-  left: 4px;
+  left: 3px;
   bottom: 3px;
   background-color: var(--color-white);
   border-radius: 50%;
@@ -693,7 +693,7 @@ button {
 }
 
 .toggle-switch input:checked + .toggle-switch__slider::before {
-  transform: translateX(20px);
+  transform: translateX(19px);
 }
 
 /* Update Items */
@@ -1632,11 +1632,11 @@ button {
     width: 20px;
     height: 20px;
     left: 3px;
-    bottom: 3px;
+    bottom: 2px;
   }
 
   .toggle-switch input:checked + .toggle-switch__slider::before {
-    transform: translateX(18px);
+    transform: translateX(17px);
   }
 
   .updates-list {
@@ -5297,6 +5297,435 @@ button {
   .catalog-page-next {
     padding: 0 7px;
     font-size: 13px;
+  }
+}
+
+/* ==========================================
+   SEARCH DROPDOWN
+   ========================================== */
+
+/*
+  Дропдаун рендерится прямо внутри <header> (position: relative).
+  Позиционируется абсолютно: top — под хедером, right — совпадает
+  с правым краем контейнера (padding-right: 20px).
+*/
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  width: min(766px, calc(100vw - 40px));
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 15px 19px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  z-index: 200;
+  margin-top: 8px;
+}
+
+/* Input row */
+.search-dropdown__input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-dropdown__input-field {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 15px;
+  padding: 0 17px;
+  height: 57px;
+}
+
+.search-dropdown__search-icon {
+  flex-shrink: 0;
+}
+
+.search-dropdown__input {
+  flex: 1;
+  border: none;
+  font-weight: 500;
+  outline: none;
+  font-size: 15px;
+  color: #0f172a;
+  background: transparent;
+  font-family: inherit;
+}
+
+.search-dropdown__input::placeholder {
+  color: #94a3b8;
+}
+
+.search-dropdown__close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 57px;
+  height: 57px;
+  border-radius: 15px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.search-dropdown__close-btn:hover {
+  background: #f8fafc;
+}
+
+.search-dropdown__close-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Label */
+.search-dropdown__label {
+  font-size: 16px;
+  color: #0f172a;
+  margin: 16px 0;
+  font-weight: 500;
+}
+
+/* Grid 2 columns */
+.search-dropdown__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Card */
+.search-dropdown__card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #f8fafc;
+  border-radius: 15px;
+  padding: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.search-dropdown__card:hover {
+  background: #eff3f8;
+}
+
+.search-dropdown__card-img {
+  position: relative;
+  width: 72px;
+  height: 97px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.search-dropdown__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.search-dropdown__card-type {
+  font-size: 16px;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.search-dropdown__card-title {
+  font-size: 18px;
+  color: #0f172a;
+  font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Mobile X в хедере ── */
+.search-close-mobile {
+  display: none;
+}
+
+/* ── 1440px ── */
+@media (max-width: 1440px) {
+  .search-dropdown {
+    width: min(680px, calc(100vw - 40px));
+    padding: 13px 17px;
+    border-radius: 22px;
+  }
+
+  .search-dropdown__input-wrap {
+    gap: 14px;
+  }
+
+  .search-dropdown__input-field {
+    height: 52px;
+    border-radius: 13px;
+    padding: 0 15px;
+    gap: 14px;
+  }
+
+  .search-dropdown__search-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .search-dropdown__input {
+    font-size: 14px;
+  }
+
+  .search-dropdown__close-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+  }
+
+  .search-dropdown__close-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .search-dropdown__label {
+    font-size: 15px;
+    margin: 14px 0;
+  }
+
+  .search-dropdown__grid {
+    gap: 14px;
+  }
+
+  .search-dropdown__card {
+    gap: 16px;
+    border-radius: 13px;
+    padding: 9px;
+  }
+
+  .search-dropdown__card-img {
+    width: 64px;
+    height: 86px;
+    border-radius: 13px;
+  }
+
+  .search-dropdown__card-type {
+    font-size: 14px;
+  }
+
+  .search-dropdown__card-title {
+    font-size: 16px;
+  }
+}
+
+/* ── 1280px ── */
+@media (max-width: 1280px) {
+  .search-dropdown {
+    width: min(600px, calc(100vw - 40px));
+    padding: 12px 15px;
+    border-radius: 20px;
+  }
+
+  .search-dropdown__input-wrap {
+    gap: 12px;
+  }
+
+  .search-dropdown__input-field {
+    height: 48px;
+    border-radius: 12px;
+    padding: 0 13px;
+    gap: 12px;
+  }
+
+  .search-dropdown__search-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .search-dropdown__input {
+    font-size: 13px;
+  }
+
+  .search-dropdown__close-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .search-dropdown__close-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .search-dropdown__label {
+    font-size: 14px;
+    margin: 12px 0;
+  }
+
+  .search-dropdown__grid {
+    gap: 12px;
+  }
+
+  .search-dropdown__card {
+    gap: 14px;
+    border-radius: 12px;
+    padding: 8px;
+  }
+
+  .search-dropdown__card-img {
+    width: 58px;
+    height: 78px;
+    border-radius: 12px;
+  }
+
+  .search-dropdown__card-type {
+    font-size: 13px;
+  }
+
+  .search-dropdown__card-title {
+    font-size: 15px;
+  }
+}
+
+/* ── ≤1024px → полная ширина ── */
+@media (max-width: 1024px) {
+  .search-dropdown {
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 0 0 20px 20px;
+    margin-top: 0;
+    box-shadow: none;
+  }
+
+  .search-dropdown__input-field {
+    height: 46px;
+    border-radius: 11px;
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .search-dropdown__search-icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .search-dropdown__input {
+    font-size: 13px;
+  }
+
+  .search-dropdown__close-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
+  }
+
+  .search-dropdown__close-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .search-dropdown__label {
+    font-size: 13px;
+    margin: 11px 0;
+  }
+
+  .search-dropdown__grid {
+    gap: 10px;
+  }
+
+  .search-dropdown__card {
+    gap: 12px;
+    border-radius: 11px;
+    padding: 8px;
+  }
+
+  .search-dropdown__card-img {
+    width: 54px;
+    height: 72px;
+    border-radius: 11px;
+  }
+
+  .search-dropdown__card-type {
+    font-size: 12px;
+  }
+
+  .search-dropdown__card-title {
+    font-size: 14px;
+  }
+}
+
+/* ── ≤540px → слияние с хедером ── */
+@media (max-width: 540px) {
+  /* Показать мобильную X в хедере, скрыть остальные кнопки */
+  .search-close-mobile {
+    display: flex;
+  }
+
+  .header--search-open .btn-search,
+  .header--search-open .btn-theme {
+    display: none;
+  }
+
+  /* Убрать нижний скруглöн хедера при открытом поиске */
+  .header--search-open {
+    border-radius: 0 !important;
+  }
+
+  /* Дропдаун: сливается с хедером */
+  .search-dropdown {
+    border-radius: 0 0 20px 20px;
+    padding: 0 16px 12px;
+  }
+
+  /* Скрыть X внутри дропдауна — он теперь в хедере */
+  .search-dropdown__close-btn {
+    display: none;
+  }
+
+  .search-dropdown__input-field {
+    height: 44px;
+    border-radius: 13px;
+    padding: 0 12px;
+  }
+
+  .search-dropdown__search-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .search-dropdown__label {
+    font-size: 13px;
+    margin: 10px 0;
+  }
+
+  .search-dropdown__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .search-dropdown__card {
+    gap: 10px;
+    border-radius: 10px;
+    padding: 7px;
+  }
+
+  .search-dropdown__card-img {
+    width: 60px;
+    height: 82px;
+    border-radius: 10px;
+  }
+
+  .search-dropdown__card-type {
+    font-size: 11px;
+  }
+
+  .search-dropdown__card-title {
+    font-size: 13px;
+    max-width: 80px;
   }
 }
 

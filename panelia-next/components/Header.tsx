@@ -4,13 +4,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import LoginModal from './LoginModal';
+import SearchDropdown from './SearchDropdown';
 
 export default function Header() {
   const [loginOpen, setLoginOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <>
-      <header className="header" id="header">
+      <header className={`header${searchOpen ? ' header--search-open' : ''}`} id="header" style={{ position: 'relative' }}>
         <div className="header__inner container">
           <div className="header__left">
             <Link href="/" className="logo" aria-label="Panelia">
@@ -33,7 +35,18 @@ export default function Header() {
             </nav>
           </div>
           <div className="header__actions">
-            <button className="header__action-btn btn-search" aria-label="Поиск">
+            {searchOpen && (
+              <button
+                className="header__action-btn search-close-mobile"
+                aria-label="Закрыть поиск"
+                onClick={() => setSearchOpen(false)}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 6L6 18M6 6l12 12" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            )}
+            <button className="header__action-btn btn-search" aria-label="Поиск" onClick={() => setSearchOpen(true)}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 21L15.8033 15.8033M15.8033 15.8033C17.1605 14.4461 18 12.5711 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C12.5711 18 14.4461 17.1605 15.8033 15.8033Z" stroke="#0F172A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -62,6 +75,7 @@ export default function Header() {
             </button>
           </div>
         </div>
+        {searchOpen && <SearchDropdown onClose={() => setSearchOpen(false)} />}
       </header>
 
       {loginOpen && <LoginModal onClose={() => setLoginOpen(false)} />}
