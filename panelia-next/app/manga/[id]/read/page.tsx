@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ReportModal from "@/components/ReportModal";
 import { useState } from "react";
 
 /* ── Mock Data ── */
@@ -488,9 +489,11 @@ function ChaptersPanel({
 function CommentsPanel({
   onClose,
   comments,
+  onReport,
 }: {
   onClose: () => void;
   comments: typeof COMMENTS;
+  onReport: () => void;
 }) {
   return (
     <>
@@ -526,7 +529,7 @@ function CommentsPanel({
                   <span className="reader__panel-comment-name">
                     {c.username}
                   </span>
-                  <button className="reader__panel-comment-menu">
+                  <button className="reader__panel-comment-menu" onClick={onReport}>
                     <ReportIcon />
                   </button>
                 </div>
@@ -564,6 +567,7 @@ export default function MangaReadPage({ params }: { params: { id: string } }) {
   const [reversed, setReversed] = useState(false);
   const [bookmarkOption, setBookmarkOption] = useState<string | null>("Читаю");
   const [liked, setLiked] = useState(false);
+  const [reportOpen, setReportOpen] = useState(false);
   const [bookmarkOpen, setBookmarkOpen] = useState(false);
   const totalChapters = 15;
   const currentChapter = 1;
@@ -691,6 +695,7 @@ export default function MangaReadPage({ params }: { params: { id: string } }) {
               <CommentsPanel
                 onClose={() => setActivePanel(null)}
                 comments={COMMENTS}
+                onReport={() => setReportOpen(true)}
               />
             )}
           </div>
@@ -705,6 +710,7 @@ export default function MangaReadPage({ params }: { params: { id: string } }) {
         )}
       </div>
       <Footer />
+      {reportOpen && <ReportModal onClose={() => setReportOpen(false)} />}
     </>
   );
 }

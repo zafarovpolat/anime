@@ -2,6 +2,8 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ReviewModal from "@/components/ReviewModal";
+import ReportModal from "@/components/ReportModal";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -461,6 +463,8 @@ export default function MangaPage({ params }: { params: { id: string } }) {
   );
   const [searchQuery, setSearchQuery] = useState("");
   const [reversed, setReversed] = useState(false);
+  const [reviewOpen, setReviewOpen] = useState(false);
+  const [reportOpen, setReportOpen] = useState(false);
 
   const filteredChapters = CHAPTERS_LIST.filter((ch) =>
     `Том ${ch.volume} Глава ${ch.chapter}`
@@ -567,11 +571,11 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                       <div className="manga-inner__rating-score">
                         {data.rating}
                       </div>
-                      <div className="manga-inner__rating-count">
+                      <a href="#" className="manga-inner__rating-count">
                         {data.ratingCount}
-                      </div>
-                      <button className="manga-inner__rating-btn">
-                        Оценить
+                      </a>
+                      <button className="manga-inner__rating-btn" onClick={() => setReviewOpen(true)}>
+                        Написать отзыв
                       </button>
                     </div>
                   </div>
@@ -725,7 +729,7 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                                   <span className="manga-inner__comment-name">
                                     {c.username}
                                   </span>
-                                  <button className="manga-inner__comment-menu">
+                                  <button className="manga-inner__comment-menu" onClick={() => setReportOpen(true)}>
                                     <ThreeDotsIcon />
                                   </button>
                                 </div>
@@ -767,6 +771,8 @@ export default function MangaPage({ params }: { params: { id: string } }) {
         </section>
       </main>
       <Footer />
+      {reviewOpen && <ReviewModal onClose={() => setReviewOpen(false)} />}
+      {reportOpen && <ReportModal onClose={() => setReportOpen(false)} />}
     </>
   );
 }
