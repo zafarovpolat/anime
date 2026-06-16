@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReviewModal from "@/components/ReviewModal";
 import ReportModal from "@/components/ReportModal";
+import BookmarkModal from "@/components/BookmarkModal";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -465,6 +466,8 @@ export default function MangaPage({ params }: { params: { id: string } }) {
   const [reversed, setReversed] = useState(false);
   const [reviewOpen, setReviewOpen] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
+  const [bookmarkOpen, setBookmarkOpen] = useState(false);
+  const [bookmarkValue, setBookmarkValue] = useState<string | null>(null);
 
   const filteredChapters = CHAPTERS_LIST.filter((ch) =>
     `Том ${ch.volume} Глава ${ch.chapter}`
@@ -496,8 +499,9 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                     <BookSquareIcon />
                     Читать
                   </Link>
-                  <button className="manga-inner__bookmark-btn">
-                    <BookmarkOutlineIcon />В закладки
+                  <button className="manga-inner__bookmark-btn" onClick={() => setBookmarkOpen(true)}>
+                    <BookmarkOutlineIcon />
+                    {bookmarkValue ?? "В закладки"}
                   </button>
                 </div>
               </div>
@@ -773,6 +777,13 @@ export default function MangaPage({ params }: { params: { id: string } }) {
       <Footer />
       {reviewOpen && <ReviewModal onClose={() => setReviewOpen(false)} />}
       {reportOpen && <ReportModal onClose={() => setReportOpen(false)} />}
+      {bookmarkOpen && (
+        <BookmarkModal
+          value={bookmarkValue}
+          onChange={setBookmarkValue}
+          onClose={() => setBookmarkOpen(false)}
+        />
+      )}
     </>
   );
 }
