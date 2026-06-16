@@ -2,7 +2,8 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 /* ── SVG Icons ── */
 function ProfileIcon() {
@@ -371,7 +372,17 @@ function BookmarkEditModal({ onClose }: { onClose: () => void }) {
 }
 
 export default function ProfilePage() {
-  const [activeTab, setActiveTab] = useState('profile');
+  return (
+    <Suspense fallback={null}>
+      <ProfilePageInner />
+    </Suspense>
+  );
+}
+
+function ProfilePageInner() {
+  const searchParams = useSearchParams();
+  const initialTab = searchParams.get('tab') === 'bookmarks' ? 'bookmarks' : 'profile';
+  const [activeTab, setActiveTab] = useState(initialTab);
   const [activeBookmarkFilter, setActiveBookmarkFilter] = useState('Читаю');
   const [gender, setGender] = useState('Мужской');
   const [bookmarkEditOpen, setBookmarkEditOpen] = useState(false);
