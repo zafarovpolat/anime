@@ -2408,6 +2408,25 @@ button {
   font-size: 16px;
   color: #97989b;
   cursor: pointer;
+  transition: color 0.15s;
+}
+
+.manga-inner__comment-like:hover {
+  color: #562cf0;
+}
+
+.manga-inner__comment-like:hover svg path {
+  fill: #562cf0;
+  transition: fill 0.15s;
+}
+
+.manga-inner__comment-dislike:hover {
+  color: #ff4444;
+}
+
+.manga-inner__comment-dislike:hover svg path {
+  fill: #ff4444;
+  transition: fill 0.15s;
 }
 
 .manga-inner__show-more {
