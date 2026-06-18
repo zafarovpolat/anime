@@ -42,6 +42,8 @@ const STATUS_LABELS = ["Читаю", "Буду читать", "Прочитан�
 export default function BookmarksCarousel() {
   const swiperRef = useRef<SwiperType | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 540px)');
@@ -74,7 +76,15 @@ export default function BookmarksCarousel() {
         </div>
         <Swiper
           modules={[Navigation]}
-          onSwiper={(swiper) => { swiperRef.current = swiper; }}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+            setIsBeginning(swiper.isBeginning);
+            setIsEnd(swiper.isEnd);
+          }}
+          onSlideChange={(swiper) => {
+            setIsBeginning(swiper.isBeginning);
+            setIsEnd(swiper.isEnd);
+          }}
           spaceBetween={20}
           slidesPerView={5}
           breakpoints={{
@@ -115,7 +125,7 @@ export default function BookmarksCarousel() {
           <div className="carousel-controls">
             <div className="carousel-btns">
               <button
-                className="carousel-btn"
+                className={`carousel-btn${!isBeginning ? ' carousel-btn--active' : ''}`}
                 onClick={() => swiperRef.current?.slidePrev()}
                 aria-label="Назад"
               >
@@ -124,7 +134,7 @@ export default function BookmarksCarousel() {
                 </svg>
               </button>
               <button
-                className="carousel-btn carousel-btn--active"
+                className={`carousel-btn${!isEnd ? ' carousel-btn--active' : ''}`}
                 onClick={() => swiperRef.current?.slideNext()}
                 aria-label="Вперёд"
               >
