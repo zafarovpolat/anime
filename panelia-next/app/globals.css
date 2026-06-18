@@ -1828,6 +1828,49 @@ button {
   background: #f3f0ff;
 }
 
+.manga-inner__bookmark-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.manga-inner__bookmark-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ede9ff;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(86, 44, 240, 0.13);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.manga-inner__bookmark-dropdown .reader__bookmark-popup-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 18px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #180f2a;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-align: left;
+}
+
+.manga-inner__bookmark-dropdown .reader__bookmark-popup-opt:hover {
+  background: #f3f0ff;
+}
+
+.manga-inner__bookmark-dropdown .reader__bookmark-popup-opt--active {
+  background: #ede9ff;
+  color: #562cf0;
+}
+
 /* ── Right: Info block ── */
 .manga-inner__info {
   flex: 1;
@@ -1944,6 +1987,36 @@ button {
 
 .manga-inner__rating-btn:hover {
   background: #4620d0;
+}
+
+.manga-inner__user-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.manga-inner__rating-star {
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  color: #d1c9f0;
+  line-height: 0;
+  transition: color 0.12s, transform 0.1s;
+}
+
+.manga-inner__rating-star:hover,
+.manga-inner__rating-star--active {
+  color: #562cf0;
+  transform: scale(1.15);
+}
+
+.manga-inner__user-rating-val {
+  margin-left: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #562cf0;
 }
 
 .manga-inner__tabs-wrapper {
