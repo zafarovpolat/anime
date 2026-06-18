@@ -42,6 +42,18 @@ const COMMENTS = Array.from({ length: 7 }, (_, i) => ({
   dislikes: 1,
 }));
 
+const REVIEWS = Array.from({ length: 5 }, (_, i) => ({
+  id: i,
+  username: "Jul_Mot",
+  time: "2 месяца назад",
+  title: "Спасибо",
+  text: "Оригинальный сюжет для ренкорнаций.Впервые я смотрю аниме после прочтения манги. И здесь очень важно найти СВОЙ формат познания этой истории. Аниме помогло мне увидеть истинную её красоту, благодаря кинематографическим средствам, красоте рисовки и цветов, красоте главной мысли этого произведения.",
+  rating: i % 3 === 0 ? 10 : i % 3 === 1 ? 3 : 7,
+  views: "1 470",
+  likes: 240,
+  type: i % 3 === 0 ? "positive" : i % 3 === 1 ? "negative" : "neutral",
+}));
+
 /* ── SVG icons ── */
 function HeartIcon() {
   return (
@@ -288,6 +300,56 @@ function ThumbDownIcon() {
   );
 }
 
+function SmilePositiveIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2.2"/>
+      <path d="M8.5 14.5C8.5 14.5 9.8 16 12 16C14.2 16 15.5 14.5 15.5 14.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/>
+      <circle cx="9" cy="10" r="1.4" fill="currentColor"/>
+      <circle cx="15" cy="10" r="1.4" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function SmileNegativeIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2.2"/>
+      <path d="M8.5 16C8.5 16 9.8 14.5 12 14.5C14.2 14.5 15.5 16 15.5 16" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/>
+      <circle cx="9" cy="10" r="1.4" fill="currentColor"/>
+      <circle cx="15" cy="10" r="1.4" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function SmileNeutralIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2.2"/>
+      <path d="M9 15.5H15" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/>
+      <circle cx="9" cy="10" r="1.4" fill="currentColor"/>
+      <circle cx="15" cy="10" r="1.4" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function ReviewEyeIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path opacity="0.4" d="M15.9375 6.86251C14.205 4.14001 11.67 2.57251 9 2.57251C7.665 2.57251 6.3675 2.96251 5.1825 3.69001C3.9975 4.42501 2.9325 5.49751 2.0625 6.86251C1.3125 8.04001 1.3125 9.95251 2.0625 11.13C3.795 13.86 6.33 15.42 9 15.42C10.335 15.42 11.6325 15.03 12.8175 14.3025C14.0025 13.5675 15.0675 12.495 15.9375 11.13C16.6875 9.96001 16.6875 8.04001 15.9375 6.86251ZM9 12.03C7.32 12.03 5.97 10.6725 5.97 9.00001C5.97 7.32751 7.32 5.97001 9 5.97001C10.68 5.97001 12.03 7.32751 12.03 9.00001C12.03 10.6725 10.68 12.03 9 12.03Z" fill="#180F2A"/>
+      <path d="M8.99883 6.85492C7.82133 6.85492 6.86133 7.81492 6.86133 8.99992C6.86133 10.1774 7.82133 11.1374 8.99883 11.1374C10.1763 11.1374 11.1438 10.1774 11.1438 8.99992C11.1438 7.82242 10.1763 6.85492 8.99883 6.85492Z" fill="#180F2A"/>
+    </svg>
+  );
+}
+
+function ReviewHeartIcon() {
+  return (
+    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.75 3.31938C6.19444 -0.504391 0.75 -0.0971239 0.75 4.7901C0.75 9.67732 7.75 13.7501 7.75 13.7501C7.75 13.7501 14.75 9.67732 14.75 4.7901C14.75 -0.0971239 9.30556 -0.504391 7.75 3.31938Z" stroke="#97989B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 function ReverseIcon() {
   return (
     <svg
@@ -473,7 +535,7 @@ export default function MangaPage({ params }: { params: { id: string } }) {
   const data = DEFAULT_DATA;
   const coverIdx = (id % 12) + 1;
 
-  const [activeTab, setActiveTab] = useState<"main" | "chapters" | "reviews">(
+  const [activeTab, setActiveTab] = useState<"main" | "chapters" | "comments" | "reviews">(
     "main",
   );
   const [searchQuery, setSearchQuery] = useState("");
@@ -484,6 +546,7 @@ export default function MangaPage({ params }: { params: { id: string } }) {
   const [bookmarkValue, setBookmarkValue] = useState<string | null>(null);
   const [userRating, setUserRating] = useState<number | null>(null);
   const [hoverRating, setHoverRating] = useState(0);
+  const [reviewFilter, setReviewFilter] = useState<"all" | "positive" | "negative" | "neutral">("all");
   const bookmarkWrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -520,6 +583,7 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                   <img src={`/images/cover_${coverIdx}.jpg`} alt={data.title} />
                 </div>
                 <div className="manga-inner__left-btns">
+                  <div className="manga-inner__bookmark-wrap" ref={bookmarkWrapRef}>
                   <Link
                     href={`/manga/${id}/read`}
                     className="manga-inner__read-btn"
@@ -527,7 +591,6 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                     <BookSquareIcon />
                     Читать
                   </Link>
-                  <div className="manga-inner__bookmark-wrap" ref={bookmarkWrapRef}>
                     <button
                       className="manga-inner__bookmark-btn"
                       onClick={() => setBookmarkDropdownOpen((v) => !v)}
@@ -669,10 +732,16 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                       Главы ({data.totalChapters})
                     </button>
                     <button
+                      className={`manga-inner__tab${activeTab === "comments" ? " manga-inner__tab--active" : ""}`}
+                      onClick={() => setActiveTab("comments")}
+                    >
+                      Комментарии ({data.totalReviews})
+                    </button>
+                    <button
                       className={`manga-inner__tab${activeTab === "reviews" ? " manga-inner__tab--active" : ""}`}
                       onClick={() => setActiveTab("reviews")}
                     >
-                      Отзывы ({data.totalReviews})
+                      Отзывы ({REVIEWS.length})
                     </button>
                   </div>
 
@@ -769,8 +838,8 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                     </div>
                   )}
 
-                  {/* ── Tab: Отзывы ── */}
-                  {activeTab === "reviews" && (
+                  {/* ── Tab: Комментарии ── */}
+                  {activeTab === "comments" && (
                     <div className="manga-inner__content">
                       <h3 className="manga-inner__comments-title">
                         КОММЕНТАРИИ<span>{data.totalReviews}</span>
@@ -827,6 +896,86 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                             </div>
                           </div>
                         ))}
+                      </div>
+
+                      <button className="manga-inner__show-more">
+                        Показать ещё
+                      </button>
+                    </div>
+                  )}
+                  {/* ── Tab: Отзывы ── */}
+                  {activeTab === "reviews" && (
+                    <div className="manga-inner__content">
+                      {/* Фильтры */}
+                      <div className="manga-inner__review-filters">
+                        <button
+                          className={`manga-inner__review-filter${reviewFilter === "all" ? " manga-inner__review-filter--active" : ""}`}
+                          onClick={() => setReviewFilter("all")}
+                        >
+                          Все отзывы
+                        </button>
+                        <button
+                          className={`manga-inner__review-filter manga-inner__review-filter--positive${reviewFilter === "positive" ? " manga-inner__review-filter--active" : ""}`}
+                          onClick={() => setReviewFilter("positive")}
+                        >
+                          <SmilePositiveIcon />
+                          Положительные
+                        </button>
+                        <button
+                          className={`manga-inner__review-filter manga-inner__review-filter--negative${reviewFilter === "negative" ? " manga-inner__review-filter--active" : ""}`}
+                          onClick={() => setReviewFilter("negative")}
+                        >
+                          <SmileNegativeIcon />
+                          Негативные
+                        </button>
+                        <button
+                          className={`manga-inner__review-filter manga-inner__review-filter--neutral${reviewFilter === "neutral" ? " manga-inner__review-filter--active" : ""}`}
+                          onClick={() => setReviewFilter("neutral")}
+                        >
+                          <SmileNeutralIcon />
+                          Нейтральные
+                        </button>
+                      </div>
+
+                      {/* Список отзывов */}
+                      <div className="manga-inner__reviews-list">
+                        {REVIEWS.filter((r) => reviewFilter === "all" || r.type === reviewFilter).map((r) => {
+                          const scoreColor = r.rating > 5 ? "green" : r.rating === 5 ? "gray" : "red";
+                          return (
+                            <div key={r.id} className={`manga-inner__review manga-inner__review--${r.type}`}>
+                              <div className="manga-inner__review-top">
+                                <div className="manga-inner__review-avatar">
+                                  <img
+                                    src={`/images/cover_${(r.id % 12) + 1}.jpg`}
+                                    alt={r.username}
+                                  />
+                                </div>
+                                <div className="manga-inner__review-user">
+                                  <span className="manga-inner__comment-name">{r.username}</span>
+                                  <span className="manga-inner__comment-time">{r.time}</span>
+                                </div>
+                                <div className={`manga-inner__review-indicator manga-inner__review-indicator--${r.type}`} />
+                              </div>
+                              <p className="manga-inner__review-title">{r.title}</p>
+                              <div className="manga-inner__review-textbox">
+                                <p className="manga-inner__comment-text">{r.text}</p>
+                              </div>
+                              <div className="manga-inner__review-footer">
+                                <span className="manga-inner__review-score">
+                                  Оценка: <span className={`manga-inner__review-score-val manga-inner__review-score-val--${scoreColor}`}>{r.rating}</span>
+                                </span>
+                                <div className="manga-inner__review-reactions">
+                                  <span className="manga-inner__review-stat">
+                                    <ReviewEyeIcon /> {r.views}
+                                  </span>
+                                  <span className="manga-inner__review-stat">
+                                    <ReviewHeartIcon /> {r.likes}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
 
                       <button className="manga-inner__show-more">
