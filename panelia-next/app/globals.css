@@ -3007,17 +3007,13 @@ button {
   width: 100%;
 }
 
-.profile-sidebar__item svg path {
-  fill: #97989b;
-}
-
 .profile-sidebar__item--active {
   background: #f9f9fa;
-  color: #180f2a;
+  color: #562cf0;
 }
 
 .profile-sidebar__item--active svg path {
-  fill: #97989b;
+  fill: #562cf0;
 }
 
 .profile-sidebar__divider {
