@@ -9354,8 +9354,11 @@ button {
 }
 
 .customize-modal__card--avatar {
-  width: 222px;
+  width: 247px;
+  max-width: 100%;
   aspect-ratio: 1 / 1;
+  height: auto;
+  align-self: flex-start;
   flex-shrink: 0;
 }
 
@@ -9416,12 +9419,18 @@ button {
     font-size: 20px;
   }
 
+  .customize-modal__previews {
+    flex-direction: column;
+  }
+
   .customize-modal__card {
     height: 150px;
   }
 
   .customize-modal__card--avatar {
-    width: 150px;
+    width: 247px;
+    max-width: 100%;
+    height: auto;
   }
 
   .customize-modal__save {
