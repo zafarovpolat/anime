@@ -383,6 +383,76 @@ function BookmarkEditModal({ onClose }: { onClose: () => void }) {
   );
 }
 
+/* ── Customize Modal ── */
+function CustomizeModal({ onClose }: { onClose: () => void }) {
+  const [avatar, setAvatar] = useState('/images/avatar2.png');
+  const [banner, setBanner] = useState('/images/profile-bg.png');
+  const avatarInput = useRef<HTMLInputElement>(null);
+  const bannerInput = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  const handlePick = (setter: (v: string) => void) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) setter(URL.createObjectURL(file));
+  };
+
+  return (
+    <>
+      <div className="customize-overlay" onClick={onClose} />
+      <div className="customize-modal">
+        <div className="customize-modal__header">
+          <h2 className="customize-modal__title">Кастомизировать</h2>
+          <button className="customize-modal__close" onClick={onClose} aria-label="Закрыть">
+            <CloseIcon />
+          </button>
+        </div>
+
+        <div className="customize-modal__previews">
+          <div className="customize-modal__card customize-modal__card--avatar">
+            <img src={avatar} alt="Аватар" />
+            <button className="customize-modal__change" onClick={() => avatarInput.current?.click()}>
+              Изменить
+            </button>
+            <input
+              ref={avatarInput}
+              type="file"
+              accept="image/*"
+              hidden
+              onChange={handlePick(setAvatar)}
+            />
+          </div>
+          <div className="customize-modal__card customize-modal__card--banner">
+            <img src={banner} alt="Баннер" />
+            <button className="customize-modal__change" onClick={() => bannerInput.current?.click()}>
+              Изменить
+            </button>
+            <input
+              ref={bannerInput}
+              type="file"
+              accept="image/*"
+              hidden
+              onChange={handlePick(setBanner)}
+            />
+          </div>
+        </div>
+
+        <button className="customize-modal__save" onClick={onClose}>Сохранить</button>
+      </div>
+    </>
+  );
+}
+
 /* ── Review icons ── */
 function SmilePositiveIcon() {
   return (
@@ -458,6 +528,7 @@ function ProfilePageInner() {
   const [reviewFilter, setReviewFilter] = useState('all');
   const [gender, setGender] = useState('Мужской');
   const [bookmarkEditOpen, setBookmarkEditOpen] = useState(false);
+  const [customizeOpen, setCustomizeOpen] = useState(false);
   const [commentMenuOpen, setCommentMenuOpen] = useState<number | null>(null);
   const [showOldPwd, setShowOldPwd] = useState(false);
   const [showNewPwd, setShowNewPwd] = useState(true);
@@ -478,12 +549,14 @@ function ProfilePageInner() {
                 <h2 className="profile-banner__name">SEMPAI_11</h2>
                 <p className="profile-banner__status">Пользователь | В сети 2 минуты назад</p>
               </div>
-              <button className="profile-banner__upload">
+              <button className="profile-banner__upload" onClick={() => setCustomizeOpen(true)}>
                 <UploadIcon />
               </button>
             </div>
           </div>
         </section>
+
+        {customizeOpen && <CustomizeModal onClose={() => setCustomizeOpen(false)} />}
 
         {/* ── Mobile tab bar ── */}
         <div className="profile-mobile-tabs">
