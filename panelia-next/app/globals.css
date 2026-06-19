@@ -1279,7 +1279,7 @@ button {
   }
 
   .header__action-btn--desktop {
-    display: none;
+    display: flex;
   }
 
   .header__left {
