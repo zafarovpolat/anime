@@ -6376,37 +6376,6 @@ button {
   transform: scale(0.95);
 }
 
-/* Tabs */
-.login-modal__tabs {
-  display: flex;
-  gap: 4px;
-  background: #f4f4f6;
-  border-radius: 14px;
-  padding: 4px;
-  margin-bottom: 24px;
-}
-
-.login-modal__tab {
-  flex: 1;
-  height: 42px;
-  border: none;
-  border-radius: 11px;
-  background: transparent;
-  font-family: "Golos Text", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  color: #97989b;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.login-modal__tab--active {
-  background: #fff;
-  color: #180f2a;
-  font-weight: 600;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-}
-
 /* Register link */
 .login-modal__register {
   font-size: 15px;

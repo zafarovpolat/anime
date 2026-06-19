@@ -56,24 +56,11 @@ export default function LoginModal({ onClose }: LoginModalProps) {
           </svg>
         </button>
 
-        {/* Tabs */}
-        <div className="login-modal__tabs">
-          <button
-            className={`login-modal__tab${tab === 'login' ? ' login-modal__tab--active' : ''}`}
-            onClick={() => setTab('login')}
-          >
-            Войти
-          </button>
-          <button
-            className={`login-modal__tab${tab === 'register' ? ' login-modal__tab--active' : ''}`}
-            onClick={() => setTab('register')}
-          >
-            Регистрация
-          </button>
-        </div>
-
         {tab === 'login' ? (
           <>
+            {/* Title */}
+            <h2 className="login-modal__title">Войти в аккаунт</h2>
+
             <div className="login-modal__inputs">
               <div className="login-modal__field">
                 <span className="login-modal__field-icon"><EmailIcon /></span>
@@ -105,6 +92,21 @@ export default function LoginModal({ onClose }: LoginModalProps) {
               </button>
             </div>
 
+            {/* Register link */}
+            <p className="login-modal__register">
+              <span>Нет учетной записи?</span>
+              <a
+                href="#"
+                className="login-modal__register-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setTab('register');
+                }}
+              >
+                Зарегистрироваться
+              </a>
+            </p>
+
             <p className="login-modal__legal">
               Нажимая <em>«Войти»</em>,{" "}
               <span className="login-modal__legal-dark">вы принимаете{" "}
@@ -115,6 +117,9 @@ export default function LoginModal({ onClose }: LoginModalProps) {
           </>
         ) : (
           <>
+            {/* Title */}
+            <h2 className="login-modal__title">Регистрация</h2>
+
             <div className="login-modal__inputs">
               <div className="login-modal__field">
                 <span className="login-modal__field-icon"><UserIcon /></span>
@@ -134,6 +139,21 @@ export default function LoginModal({ onClose }: LoginModalProps) {
               </div>
               <button className="login-modal__submit">Зарегистрироваться</button>
             </div>
+
+            {/* Login link */}
+            <p className="login-modal__register">
+              <span>Уже есть учетная запись?</span>
+              <a
+                href="#"
+                className="login-modal__register-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setTab('login');
+                }}
+              >
+                Войти
+              </a>
+            </p>
 
             <p className="login-modal__legal">
               Нажимая <em>«Зарегистрироваться»</em>,{" "}
