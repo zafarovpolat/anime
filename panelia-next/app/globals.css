@@ -2022,6 +2022,23 @@ button {
   color: #562cf0;
 }
 
+.manga-inner__rating-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #97989b;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.manga-inner__rating-clear:hover {
+  color: #f44336;
+}
+
 .manga-inner__tabs-wrapper {
   background-color: white;
   border-radius: 25px;
