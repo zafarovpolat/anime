@@ -9335,6 +9335,7 @@ button {
 
 .customize-modal__previews {
   display: flex;
+  align-items: flex-start;
   gap: 18px;
   margin-bottom: 20px;
 }
@@ -9343,7 +9344,6 @@ button {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  height: 222px;
 }
 
 .customize-modal__card img {
@@ -9357,7 +9357,6 @@ button {
   width: 247px;
   max-width: 100%;
   aspect-ratio: 1 / 1;
-  height: auto;
   align-self: flex-start;
   flex-shrink: 0;
 }
@@ -9365,6 +9364,7 @@ button {
 .customize-modal__card--banner {
   flex: 1;
   min-width: 0;
+  aspect-ratio: 16 / 5;
 }
 
 .customize-modal__change {
@@ -9423,14 +9423,13 @@ button {
     flex-direction: column;
   }
 
-  .customize-modal__card {
-    height: 150px;
-  }
-
   .customize-modal__card--avatar {
     width: 247px;
     max-width: 100%;
-    height: auto;
+  }
+
+  .customize-modal__card--banner {
+    align-self: stretch;
   }
 
   .customize-modal__save {
