@@ -5035,6 +5035,13 @@ button {
   gap: 30px 14px;
 }
 
+.catalog-empty {
+  padding: 60px 0;
+  text-align: center;
+  color: #97989b;
+  font-size: 16px;
+}
+
 /* Pagination */
 .catalog-pagination {
   display: flex;
@@ -5792,6 +5799,14 @@ button {
   font-weight: 500;
 }
 
+/* Empty state */
+.search-dropdown__empty {
+  padding: 20px;
+  text-align: center;
+  color: #97989b;
+  font-size: 15px;
+}
+
 /* Grid 2 columns */
 .search-dropdown__grid {
   display: grid;
@@ -6359,6 +6374,37 @@ button {
 
 .login-modal__social-btn:active {
   transform: scale(0.95);
+}
+
+/* Tabs */
+.login-modal__tabs {
+  display: flex;
+  gap: 4px;
+  background: #f4f4f6;
+  border-radius: 14px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.login-modal__tab {
+  flex: 1;
+  height: 42px;
+  border: none;
+  border-radius: 11px;
+  background: transparent;
+  font-family: "Golos Text", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #97989b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.login-modal__tab--active {
+  background: #fff;
+  color: #180f2a;
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
 }
 
 /* Register link */

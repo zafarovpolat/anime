@@ -8,17 +8,29 @@ interface SearchDropdownProps {
   onClose: () => void;
 }
 
-const POPULAR = [
+const ALL_ITEMS = [
   { id: 1, cover: '/images/cover_1.jpg', type: 'Манга', title: 'План перерожденного наёмника' },
   { id: 2, cover: '/images/cover_2.jpg', type: 'Манга', title: 'Я стала приёмной дочерью в семье убийц' },
   { id: 3, cover: '/images/cover_3.jpg', type: 'Манга', title: 'Леди-малышка изменяет мир деньгами' },
   { id: 4, cover: '/images/cover_4.jpg', type: 'Манга', title: 'Следуйте за своим сердцем' },
+  { id: 5, cover: '/images/cover_5.jpg', type: 'Манга', title: 'Не подбирайте выброшенный мусор' },
+  { id: 6, cover: '/images/cover_6.jpg', type: 'Манга', title: 'Таков закон' },
+  { id: 7, cover: '/images/cover_7.jpg', type: 'Манга', title: 'Истинная красота' },
+  { id: 8, cover: '/images/cover_8.jpg', type: 'Манга', title: 'Игрок падшего дворянского рода' },
+  { id: 9, cover: '/images/cover_9.jpg', type: 'Манга', title: 'Мир Зомби' },
+  { id: 10, cover: '/images/cover_10.jpg', type: 'Манга', title: 'Наномашины' },
+  { id: 11, cover: '/images/cover_11.jpg', type: 'Манга', title: 'Выбери меня!' },
+  { id: 12, cover: '/images/cover_12.jpg', type: 'Манга', title: 'Присцилла просит о замужестве' },
 ];
 
 export default function SearchDropdown({ onClose }: SearchDropdownProps) {
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+
+  const results = query.trim()
+    ? ALL_ITEMS.filter(item => item.title.toLowerCase().includes(query.toLowerCase()))
+    : ALL_ITEMS.slice(0, 4);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -66,21 +78,27 @@ export default function SearchDropdown({ onClose }: SearchDropdownProps) {
         </button>
       </div>
 
-      <p className="search-dropdown__label">Часто ищут</p>
+      <p className="search-dropdown__label">
+        {query.trim() ? `Результаты по «${query}»` : 'Часто ищут'}
+      </p>
 
-      <div className="search-dropdown__grid">
-        {POPULAR.map(item => (
-          <Link key={item.id} href="#" className="search-dropdown__card" onClick={onClose}>
-            <div className="search-dropdown__card-img">
-              <Image src={item.cover} alt={item.title} fill sizes="72px" style={{ objectFit: 'cover' }} />
-            </div>
-            <div className="search-dropdown__card-info">
-              <span className="search-dropdown__card-type">{item.type}</span>
-              <span className="search-dropdown__card-title">{item.title}</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+      {results.length === 0 ? (
+        <p className="search-dropdown__empty">Ничего не найдено</p>
+      ) : (
+        <div className="search-dropdown__grid">
+          {results.map(item => (
+            <Link key={item.id} href={`/manga/${item.id}`} className="search-dropdown__card" onClick={onClose}>
+              <div className="search-dropdown__card-img">
+                <Image src={item.cover} alt={item.title} fill sizes="72px" style={{ objectFit: 'cover' }} />
+              </div>
+              <div className="search-dropdown__card-info">
+                <span className="search-dropdown__card-type">{item.type}</span>
+                <span className="search-dropdown__card-title">{item.title}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

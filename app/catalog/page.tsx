@@ -45,6 +45,21 @@ const RATINGS = [
   9.6, 9.4, 9.2, 9.8, 9.1, 9.7, 9.3, 9.5, 9.0, 9.6, 9.4, 9.8, 9.2, 9.3, 9.7,
 ];
 
+const CARD_GENRES = [
+  ["Романтика", "Драма"],
+  ["Боевые искусства", "Приключения"],
+  ["Комедия", "Романтика"],
+  ["Романтика", "Сёдзё"],
+  ["Фэнтези", "Приключения"],
+  ["Боевые искусства", "Драма"],
+  ["Комедия", "Сёдзё"],
+  ["Боевые искусства", "Исекай"],
+  ["Мистика", "Драма"],
+  ["Исекай", "Приключения"],
+  ["Романтика", "Гарем"],
+  ["Детектив", "Мистика"],
+];
+
 function StarIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -222,12 +237,24 @@ export default function CatalogPage() {
     "По алфавиту",
   ];
 
-  const cards = Array.from({ length: 12 }, (_, i) => ({
+  const allCards = Array.from({ length: 12 }, (_, i) => ({
     id: i,
-    coverIdx: (i % 5) + 1,
+    coverIdx: (i % 12) + 1,
     title: MANGA_TITLES[i % MANGA_TITLES.length],
     rating: RATINGS[i],
+    genres: CARD_GENRES[i % CARD_GENRES.length],
+    year: 2020 + (i % 5),
   }));
+
+  const cards = allCards.filter((card) => {
+    if (nameSearch && !card.title.toLowerCase().includes(nameSearch.toLowerCase())) return false;
+    if (selectedGenres.length > 0 && !selectedGenres.some((g) => card.genres.includes(g))) return false;
+    if (ratingFrom && card.rating < parseFloat(ratingFrom)) return false;
+    if (ratingTo && card.rating > parseFloat(ratingTo)) return false;
+    if (yearFrom && card.year < parseInt(yearFrom)) return false;
+    if (yearTo && card.year > parseInt(yearTo)) return false;
+    return true;
+  });
 
   const getPaginationPages = () => {
     const pages: (number | "...")[] = [];
@@ -319,30 +346,26 @@ export default function CatalogPage() {
                 </div>
 
                 {/* Cards Grid */}
-                <div className="catalog-grid">
-                  {cards.map((card) => (
-                    <Link
-                      href={`/manga/${card.id}`}
-                      key={card.id}
-                      className="manga-card"
-                    >
-                      <div className="manga-card__image-wrapper">
-                        <img
-                          src={`/images/cover_${card.coverIdx}.jpg`}
-                          alt={card.title}
-                          loading="lazy"
-                        />
-                        <div className="rating-badge">
-                          {card.rating} <StarIcon />
+                {cards.length === 0 ? (
+                  <div className="catalog-empty">
+                    <p>Ничего не найдено. Попробуйте изменить фильтры.</p>
+                  </div>
+                ) : (
+                  <div className="catalog-grid">
+                    {cards.map((card) => (
+                      <Link href={`/manga/${card.id}`} key={card.id} className="manga-card">
+                        <div className="manga-card__image-wrapper">
+                          <img src={`/images/cover_${card.coverIdx}.jpg`} alt={card.title} loading="lazy"/>
+                          <div className="rating-badge">{card.rating} <StarIcon /></div>
                         </div>
-                      </div>
-                      <div className="manga-card__info">
-                        <h3 className="manga-card__title">{card.title}</h3>
-                        <span className="manga-card__genre">Манхва, экшен</span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+                        <div className="manga-card__info">
+                          <h3 className="manga-card__title">{card.title}</h3>
+                          <span className="manga-card__genre">{card.genres.join(", ")}</span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
 
                 {/* Pagination */}
                 <nav className="catalog-pagination" aria-label="Пагинация">
