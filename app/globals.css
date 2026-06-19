@@ -9321,7 +9321,7 @@ button {
   line-height: 100%;
   letter-spacing: 0;
   color: #180f2a;
-  margin: 0 0 20px;
+  margin: 0;
 }
 
 .customize-modal__close {
@@ -9355,9 +9355,8 @@ button {
 }
 
 .customize-modal__card--avatar {
-  width: 180px;
+  width: 222px;
   aspect-ratio: 1 / 1;
-  height: auto;
   flex-shrink: 0;
 }
 
@@ -9411,23 +9410,19 @@ button {
 @media (max-width: 768px) {
   .customize-modal {
     padding: 20px;
+    max-width: 420px;
   }
 
   .customize-modal__title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
-  .customize-modal__previews {
-    flex-direction: column;
+  .customize-modal__card {
+    height: 150px;
   }
 
   .customize-modal__card--avatar {
-    width: 100%;
-    height: auto;
-  }
-
-  .customize-modal__card--banner {
-    height: 180px;
+    width: 150px;
   }
 
   .customize-modal__save {
