@@ -9331,7 +9331,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateY(-10px);
 }
 
 .customize-modal__previews {
