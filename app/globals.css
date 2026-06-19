@@ -9311,15 +9311,17 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .customize-modal__title {
   font-family: "Golos Text", sans-serif;
-  font-size: 26px;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0;
   color: #180f2a;
-  margin: 0;
+  margin: 0 0 20px;
 }
 
 .customize-modal__close {
@@ -9334,7 +9336,7 @@ button {
 .customize-modal__previews {
   display: flex;
   gap: 18px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .customize-modal__card {
@@ -9352,7 +9354,7 @@ button {
 }
 
 .customize-modal__card--avatar {
-  width: 222px;
+  width: 180px;
   flex-shrink: 0;
 }
 

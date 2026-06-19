@@ -385,7 +385,7 @@ function BookmarkEditModal({ onClose }: { onClose: () => void }) {
 
 /* ── Customize Modal ── */
 function CustomizeModal({ onClose }: { onClose: () => void }) {
-  const [avatar, setAvatar] = useState('/images/avatar2.png');
+  const [avatar, setAvatar] = useState('/images/avatar3.png');
   const [banner, setBanner] = useState('/images/profile-bg.png');
   const avatarInput = useRef<HTMLInputElement>(null);
   const bannerInput = useRef<HTMLInputElement>(null);
@@ -543,7 +543,7 @@ function ProfilePageInner() {
           <div className="container">
             <div className="profile-banner__content">
               <div className="profile-banner__avatar">
-                <img src="/images/avatar2.png" alt="Avatar" />
+                <img src="/images/avatar3.png" alt="Avatar" />
               </div>
               <div className="profile-banner__info">
                 <h2 className="profile-banner__name">SEMPAI_11</h2>
