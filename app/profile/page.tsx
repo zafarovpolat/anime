@@ -342,8 +342,21 @@ function PlusIcon() {
   );
 }
 
+const BOOKMARK_COLORS = ['#562cf0', '#d93025', '#28a745', '#c17900', '#0d6efd', '#e91e63'];
+
 /* ── Bookmark Edit Modal ── */
 function BookmarkEditModal({ onClose }: { onClose: () => void }) {
+  const [inputValue, setInputValue] = useState('');
+  const [selectedColor, setSelectedColor] = useState(BOOKMARK_COLORS[0]);
+  const [custom, setCustom] = useState<{ id: string; label: string; color: string }[]>([]);
+
+  const addBookmark = () => {
+    const name = inputValue.trim();
+    if (!name) return;
+    setCustom(prev => [...prev, { id: name + Date.now(), label: name, color: selectedColor }]);
+    setInputValue('');
+  };
+
   return (
     <>
       <div className="bookmark-edit-overlay" onClick={onClose} />
@@ -362,10 +375,28 @@ function BookmarkEditModal({ onClose }: { onClose: () => void }) {
             >
               <span className="reader__bookmark-popup-icon">{opt.icon}</span>
               {opt.label}
-              <span className="bookmark-edit-modal__drag">
-                <DragIcon />
-              </span>
+              <span className="bookmark-edit-modal__drag"><DragIcon /></span>
             </div>
+          ))}
+          {custom.map(c => (
+            <div key={c.id} className="reader__bookmark-popup-opt">
+              <span className="reader__bookmark-popup-icon">
+                <span style={{ display: 'inline-block', width: 16, height: 16, borderRadius: '50%', background: c.color, flexShrink: 0 }} />
+              </span>
+              {c.label}
+              <span className="bookmark-edit-modal__drag"><DragIcon /></span>
+            </div>
+          ))}
+        </div>
+        <div className="bookmark-edit-modal__colors">
+          {BOOKMARK_COLORS.map(color => (
+            <button
+              key={color}
+              className={`bookmark-edit-modal__color${selectedColor === color ? ' bookmark-edit-modal__color--active' : ''}`}
+              style={{ background: color }}
+              onClick={() => setSelectedColor(color)}
+              aria-label={color}
+            />
           ))}
         </div>
         <div className="bookmark-edit-modal__input-wrap">
@@ -373,8 +404,11 @@ function BookmarkEditModal({ onClose }: { onClose: () => void }) {
             type="text"
             className="bookmark-edit-modal__input"
             placeholder="Создать новую закладку"
+            value={inputValue}
+            onChange={e => setInputValue(e.target.value)}
+            onKeyDown={e => { if (e.key === 'Enter') addBookmark(); }}
           />
-          <button className="bookmark-edit-modal__add" aria-label="Добавить">
+          <button className="bookmark-edit-modal__add" aria-label="Добавить" onClick={addBookmark}>
             <PlusIcon />
           </button>
         </div>
