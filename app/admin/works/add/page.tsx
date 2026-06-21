@@ -23,6 +23,7 @@ export default function AdminAddWorkPage() {
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
   const [type, setType] = useState(TYPES[0]);
   const [year, setYear] = useState(YEARS[0]);
+  const [yearEnd, setYearEnd] = useState('');
   const [status, setStatus] = useState(STATUSES[0]);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -84,7 +85,7 @@ export default function AdminAddWorkPage() {
                     </div>
                   </div>
 
-                  <div className="admin-fields__row admin-fields__row--3">
+                  <div className="admin-fields__row">
                     <div className="admin-field">
                       <label className="admin-field__label">Тип</label>
                       <div className="profile-form__input-wrap">
@@ -92,15 +93,24 @@ export default function AdminAddWorkPage() {
                       </div>
                     </div>
                     <div className="admin-field">
-                      <label className="admin-field__label">Год</label>
+                      <label className="admin-field__label">Статус</label>
+                      <div className="profile-form__input-wrap">
+                        <CustomSelect options={STATUSES} value={status} onChange={setStatus} />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="admin-fields__row">
+                    <div className="admin-field">
+                      <label className="admin-field__label">Год выпуска</label>
                       <div className="profile-form__input-wrap">
                         <CustomSelect options={YEARS} value={year} onChange={setYear} />
                       </div>
                     </div>
                     <div className="admin-field">
-                      <label className="admin-field__label">Статус</label>
+                      <label className="admin-field__label">Год окончания</label>
                       <div className="profile-form__input-wrap">
-                        <CustomSelect options={STATUSES} value={status} onChange={setStatus} />
+                        <CustomSelect options={['—', ...YEARS]} value={yearEnd} onChange={setYearEnd} placeholder="—" />
                       </div>
                     </div>
                   </div>
