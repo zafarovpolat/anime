@@ -893,6 +893,22 @@ function ProfilePageInner() {
                       <button className="profile-form__save">Сохранить</button>
                     </div>
 
+                    <h2 className="profile-content__title profile-content__title--mt">ИСКЛЮЧИТЬ ЖАНРЫ</h2>
+                    <div className="profile-settings__genres">
+                      {[
+                        "Боевые искусства", "Гарем", "Гендерная интрига", "Героическое фэнтези",
+                        "Детектив", "Дзёсэй", "Драма", "Исекай",
+                        "Комедия", "Мистика", "Приключения", "Романтика",
+                        "Сёнэн", "Сёдзё", "Фэнтези",
+                      ].map((genre) => (
+                        <label key={genre} className="catalog-filter__checkbox-row profile-genre-row">
+                          <input type="checkbox" className="catalog-filter__checkbox" />
+                          <span className="catalog-filter__checkbox-label">{genre}</span>
+                        </label>
+                      ))}
+                    </div>
+                    <button className="profile-form__save" style={{ marginTop: 8 }}>Сохранить</button>
+
                     <h2 className="profile-content__title profile-content__title--mt">ПРИВЯЗАТЬ ПРОФИЛЬ</h2>
                     <div className="profile-settings__social">
                       {SOCIAL_LINKS.map((s) => (
