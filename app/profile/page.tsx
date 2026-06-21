@@ -533,6 +533,8 @@ function ProfilePageInner() {
   const [showOldPwd, setShowOldPwd] = useState(false);
   const [showNewPwd, setShowNewPwd] = useState(true);
   const [showRepeatPwd, setShowRepeatPwd] = useState(false);
+  const [excludedGenres, setExcludedGenres] = useState<string[]>([]);
+  const toggleExcludeGenre = (g: string) => setExcludedGenres(prev => prev.includes(g) ? prev.filter(x => x !== g) : [...prev, g]);
 
   return (
     <>
@@ -900,15 +902,27 @@ function ProfilePageInner() {
                         "Детектив", "Дзёсэй", "Драма", "Исекай",
                         "Комедия", "Мистика", "Приключения", "Романтика",
                         "Сёнэн", "Сёдзё", "Фэнтези",
-                      ].map((genre) => (
-                        <label key={genre} className="catalog-filter__checkbox-row profile-genre-row">
-                          <input type="checkbox" className="catalog-filter__checkbox" />
-                          <span className="catalog-filter__checkbox-label">{genre}</span>
-                        </label>
-                      ))}
+                      ].map((genre) => {
+                        const checked = excludedGenres.includes(genre);
+                        return (
+                          <button
+                            key={genre}
+                            type="button"
+                            className={`profile-genre-row${checked ? ' profile-genre-row--checked' : ''}`}
+                            onClick={() => toggleExcludeGenre(genre)}
+                          >
+                            <span className="profile-genre-checkbox-box">
+                              {checked && (
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                  <path d="M2 7L5.5 10.5L12 3.5" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                              )}
+                            </span>
+                            <span className="catalog-filter__checkbox-label">{genre}</span>
+                          </button>
+                        );
+                      })}
                     </div>
-                    <button className="profile-form__save" style={{ marginTop: 8 }}>Сохранить</button>
-
                     <h2 className="profile-content__title profile-content__title--mt">ПРИВЯЗАТЬ ПРОФИЛЬ</h2>
                     <div className="profile-settings__social">
                       {SOCIAL_LINKS.map((s) => (

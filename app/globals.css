@@ -3591,6 +3591,10 @@ button {
   background: #4620d0;
 }
 
+.profile-form__save--genres {
+  margin-top: 16px;
+}
+
 /* ── Bookmarks tab ── */
 .profile-bookmarks__filters {
   margin-bottom: 14px;
@@ -4054,11 +4058,47 @@ button {
   grid-template-columns: 1fr 1fr;
   background: #fff;
   border-radius: 16px;
-  padding: 8px 16px;
+  padding: 12px 20px;
 }
 
 .profile-genre-row {
-  padding: 10px 6px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  border-radius: 8px;
+  transition: background 0.12s;
+}
+
+.profile-genre-row:hover {
+  background: #f4f4f8;
+}
+
+.profile-genre-row .catalog-filter__checkbox-label {
+  font-size: 17px;
+}
+
+.profile-genre-checkbox-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1.5px solid #d0d0d0;
+  background: #fff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.profile-genre-row--checked .profile-genre-checkbox-box {
+  background: #562cf0;
+  border-color: #562cf0;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -4229,6 +4269,15 @@ button {
     min-height: 56px;
     font-size: 15px;
   }
+
+  /* Exclude genres */
+  .profile-genre-row .catalog-filter__checkbox-label {
+    font-size: 16px;
+  }
+  .profile-genre-checkbox-box {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 /* ── ≤1280px ── */
@@ -4318,6 +4367,15 @@ button {
   }
   .profile-social-item__btn {
     min-height: 52px;
+  }
+
+  /* Exclude genres */
+  .profile-genre-row .catalog-filter__checkbox-label {
+    font-size: 15px;
+  }
+  .profile-genre-checkbox-box {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -4507,6 +4565,19 @@ button {
     padding: 0 16px;
     font-size: 14px;
   }
+
+  /* Exclude genres */
+  .profile-settings__genres {
+    grid-template-columns: 1fr 1fr;
+    padding: 8px 12px;
+  }
+  .profile-genre-row .catalog-filter__checkbox-label {
+    font-size: 14px;
+  }
+  .profile-genre-checkbox-box {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 /* ── ≤768px — мобильный режим (сайдбар → таб-бар) ── */
@@ -4623,6 +4694,19 @@ button {
   }
   .profile-page-main .catalog-filter-toggle {
     display: none;
+  }
+
+  /* Exclude genres */
+  .profile-settings__genres {
+    grid-template-columns: 1fr;
+    padding: 6px 10px;
+  }
+  .profile-genre-row .catalog-filter__checkbox-label {
+    font-size: 15px;
+  }
+  .profile-genre-checkbox-box {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -4746,6 +4830,24 @@ button {
     height: 64px;
     font-size: 12px;
     margin-bottom: 20px;
+  }
+
+  /* Exclude genres */
+  .profile-settings__genres {
+    grid-template-columns: 1fr;
+    padding: 4px 8px;
+  }
+  .profile-genre-row {
+    padding: 10px 6px;
+    gap: 12px;
+  }
+  .profile-genre-row .catalog-filter__checkbox-label {
+    font-size: 14px;
+  }
+  .profile-genre-checkbox-box {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
   }
 
   /* Bookmarks */
