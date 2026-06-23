@@ -535,6 +535,8 @@ function ProfilePageInner() {
   const [reviewFilter, setReviewFilter] = useState('all');
   const [gender, setGender] = useState('Мужской');
   const [bookmarkEditOpen, setBookmarkEditOpen] = useState(false);
+  const [sortOpen, setSortOpen] = useState(false);
+  const [sortLabel, setSortLabel] = useState('По добавлению');
   const [customizeOpen, setCustomizeOpen] = useState(false);
   const [commentMenuOpen, setCommentMenuOpen] = useState<number | null>(null);
   const [showOldPwd, setShowOldPwd] = useState(false);
@@ -668,12 +670,35 @@ function ProfilePageInner() {
                     )}
                     <div className="catalog-title-row__actions">
                       <div className="catalog-sort-wrapper">
-                        <button className="catalog-sort-btn" aria-haspopup="listbox" aria-expanded="false">
+                        <button
+                          className="catalog-sort-btn"
+                          onClick={() => setSortOpen(v => !v)}
+                          aria-haspopup="listbox"
+                          aria-expanded={sortOpen}
+                        >
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 12L4 15L7 12M4 15V1M15 4L12 1L9 4M12 1V15" stroke="#562CF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
-                          <span>По добавлению</span>
+                          <span>{sortLabel}</span>
                         </button>
+                        {sortOpen && (
+                          <>
+                            <div style={{ position: 'fixed', inset: 0, zIndex: 10 }} onClick={() => setSortOpen(false)} />
+                            <ul className="catalog-sort-dropdown" role="listbox">
+                              {['По добавлению', 'По обновлению', 'По названию'].map(opt => (
+                                <li
+                                  key={opt}
+                                  className={`catalog-sort-option${sortLabel === opt ? ' catalog-sort-option--active' : ''}`}
+                                  role="option"
+                                  aria-selected={sortLabel === opt}
+                                  onClick={() => { setSortLabel(opt); setSortOpen(false); }}
+                                >
+                                  {opt}
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        )}
                       </div>
                       <button className="catalog-filter-toggle" aria-label="Открыть фильтры">
                         <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
