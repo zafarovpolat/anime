@@ -560,9 +560,15 @@ export default function MangaPage({ params }: { params: { id: string } }) {
       setDropdownBottom(window.innerHeight - rect.top + 6);
     } else {
       setDropdownBottom(null);
-      // Десктоп: скроллим дропдаун в видимую область
+      // Десктоп: скроллим дропдаун в видимую область с отступом снизу
       setTimeout(() => {
-        bookmarkDropdownRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (!bookmarkDropdownRef.current) return;
+        const rect = bookmarkDropdownRef.current.getBoundingClientRect();
+        const offset = 24; // отступ снизу в px
+        const overflow = rect.bottom + offset - window.innerHeight;
+        if (overflow > 0) {
+          window.scrollBy({ top: overflow, behavior: 'smooth' });
+        }
       }, 0);
     }
     const handler = (e: MouseEvent) => {
