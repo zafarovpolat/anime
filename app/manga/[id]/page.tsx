@@ -549,16 +549,21 @@ export default function MangaPage({ params }: { params: { id: string } }) {
   const [reviewFilter, setReviewFilter] = useState<"all" | "positive" | "negative" | "neutral">("all");
   const bookmarkWrapRef = useRef<HTMLDivElement>(null);
   const bookmarkBtnRef = useRef<HTMLButtonElement>(null);
+  const bookmarkDropdownRef = useRef<HTMLDivElement>(null);
   const [dropdownBottom, setDropdownBottom] = useState<number | null>(null);
 
   useEffect(() => {
     if (!bookmarkDropdownOpen) return;
-    // На мобайле (≤768px) fixed-дропдаун, позиционируем над кнопкой
     if (bookmarkBtnRef.current && window.innerWidth <= 768) {
+      // Мобайл: fixed-дропдаун над кнопкой
       const rect = bookmarkBtnRef.current.getBoundingClientRect();
       setDropdownBottom(window.innerHeight - rect.top + 6);
     } else {
       setDropdownBottom(null);
+      // Десктоп: скроллим дропдаун в видимую область
+      setTimeout(() => {
+        bookmarkDropdownRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 0);
     }
     const handler = (e: MouseEvent) => {
       if (bookmarkWrapRef.current && !bookmarkWrapRef.current.contains(e.target as Node)) {
@@ -610,6 +615,7 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                     </button>
                     {bookmarkDropdownOpen && (
                       <div
+                        ref={bookmarkDropdownRef}
                         className="manga-inner__bookmark-dropdown"
                         style={dropdownBottom !== null ? { bottom: dropdownBottom } : undefined}
                       >
