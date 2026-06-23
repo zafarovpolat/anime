@@ -301,10 +301,15 @@ const BOOKMARK_COLORS = ['#562CF0', '#3B82F6', '#22C55E', '#EF4444', '#F59E0B', 
 
 /* ── Bookmark Edit Modal ── */
 function BookmarkEditModal({ onClose }: { onClose: () => void }) {
+  const [items, setItems] = useState(
+    BOOKMARK_TABS.map(t => ({ id: t.id, label: t.label, color: t.color }))
+  );
   const [inputValue, setInputValue] = useState('');
   const [selectedColor, setSelectedColor] = useState(BOOKMARK_COLORS[0]);
-  const [custom, setCustom] = useState<{ id: string; label: string; color: string }[]>([]);
-  const [hiddenStandard, setHiddenStandard] = useState<string[]>([]);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editingText, setEditingText] = useState('');
+  const [colorPickId, setColorPickId] = useState<string | null>(null);
+  const dragIdx = useRef<number | null>(null);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -319,8 +324,27 @@ function BookmarkEditModal({ onClose }: { onClose: () => void }) {
   const addBookmark = () => {
     const name = inputValue.trim();
     if (!name) return;
-    setCustom(prev => [...prev, { id: name + Date.now(), label: name, color: selectedColor }]);
+    setItems(prev => [...prev, { id: name + Date.now(), label: name, color: selectedColor }]);
     setInputValue('');
+  };
+
+  const commitEdit = (id: string) => {
+    const text = editingText.trim();
+    if (text) setItems(prev => prev.map(x => x.id === id ? { ...x, label: text } : x));
+    setEditingId(null);
+  };
+
+  const onDragStart = (i: number) => { dragIdx.current = i; };
+  const onDragOver = (e: React.DragEvent, i: number) => {
+    e.preventDefault();
+    if (dragIdx.current === null || dragIdx.current === i) return;
+    setItems(prev => {
+      const next = [...prev];
+      const [moved] = next.splice(dragIdx.current!, 1);
+      next.splice(i, 0, moved);
+      dragIdx.current = i;
+      return next;
+    });
   };
 
   return (
@@ -334,30 +358,62 @@ function BookmarkEditModal({ onClose }: { onClose: () => void }) {
           </button>
         </div>
         <div className="reader__bookmark-popup-list">
-          {BOOKMARK_TABS.filter(opt => !hiddenStandard.includes(opt.id)).map(opt => (
-            <div key={opt.id} className="reader__bookmark-popup-opt">
-              <span className="bookmark-dot" style={{ background: opt.color }} />
-              {opt.label}
-              <button
-                className="bookmark-edit-modal__delete"
-                aria-label="Удалить"
-                onClick={() => setHiddenStandard(prev => [...prev, opt.id])}
+          {items.map((item, i) => (
+            <div key={item.id} className="bookmark-edit-modal__row-wrap">
+              <div
+                className="reader__bookmark-popup-opt"
+                draggable
+                onDragStart={() => onDragStart(i)}
+                onDragOver={e => onDragOver(e, i)}
+                onDragEnd={() => { dragIdx.current = null; }}
               >
-                <CloseIcon />
-              </button>
-            </div>
-          ))}
-          {custom.map(c => (
-            <div key={c.id} className="reader__bookmark-popup-opt">
-              <span className="bookmark-dot" style={{ background: c.color }} />
-              {c.label}
-              <button
-                className="bookmark-edit-modal__delete"
-                aria-label="Удалить"
-                onClick={() => setCustom(prev => prev.filter(x => x.id !== c.id))}
-              >
-                <CloseIcon />
-              </button>
+                <span
+                  className="bookmark-dot"
+                  style={{ background: item.color, cursor: 'pointer', flexShrink: 0 }}
+                  onClick={() => setColorPickId(colorPickId === item.id ? null : item.id)}
+                />
+                {editingId === item.id ? (
+                  <input
+                    className="bookmark-edit-modal__label-input"
+                    value={editingText}
+                    autoFocus
+                    onChange={e => setEditingText(e.target.value)}
+                    onBlur={() => commitEdit(item.id)}
+                    onKeyDown={e => {
+                      if (e.key === 'Enter') commitEdit(item.id);
+                      if (e.key === 'Escape') setEditingId(null);
+                    }}
+                  />
+                ) : (
+                  <span
+                    className="bookmark-edit-modal__label"
+                    onClick={() => { setEditingId(item.id); setEditingText(item.label); setColorPickId(null); }}
+                  >
+                    {item.label}
+                  </span>
+                )}
+                <button
+                  className="bookmark-edit-modal__delete"
+                  aria-label="Удалить"
+                  onClick={() => setItems(prev => prev.filter(x => x.id !== item.id))}
+                >
+                  <CloseIcon />
+                </button>
+                <span className="bookmark-edit-modal__drag"><DragIcon /></span>
+              </div>
+              {colorPickId === item.id && (
+                <div className="bookmark-edit-modal__color-pick">
+                  {BOOKMARK_COLORS.map(c => (
+                    <button
+                      key={c}
+                      className={`bookmark-edit-modal__color${item.color === c ? ' bookmark-edit-modal__color--active' : ''}`}
+                      style={{ background: c }}
+                      onClick={() => { setItems(prev => prev.map(x => x.id === item.id ? { ...x, color: c } : x)); setColorPickId(null); }}
+                      aria-label={c}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
