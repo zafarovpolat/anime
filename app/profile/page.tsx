@@ -277,6 +277,16 @@ function CloseIcon() {
   );
 }
 
+/* ── Trash icon ── */
+function TrashIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M3 6h18M8 6V4h8v2M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M10 11v6M14 11v6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 /* ── Drag handle icon ── */
 function DragIcon() {
   return (
@@ -397,7 +407,7 @@ function BookmarkEditModal({ onClose }: { onClose: () => void }) {
                   aria-label="Удалить"
                   onClick={() => setItems(prev => prev.filter(x => x.id !== item.id))}
                 >
-                  <CloseIcon />
+                  <TrashIcon />
                 </button>
                 <span className="bookmark-edit-modal__drag"><DragIcon /></span>
               </div>

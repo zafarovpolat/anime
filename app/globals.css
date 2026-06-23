@@ -8082,6 +8082,7 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 14px;
 }
 
 .bookmark-edit-modal__label-input {
