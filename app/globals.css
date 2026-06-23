@@ -8070,6 +8070,22 @@ button {
   padding: 0 16px;
 }
 
+.bookmark-edit-modal__delete {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.4;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+.bookmark-edit-modal__delete:hover {
+  opacity: 1;
+}
+
 .bookmark-edit-modal__drag {
   margin-left: auto;
   display: flex;

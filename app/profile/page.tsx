@@ -234,56 +234,11 @@ const MENU_ITEMS = [
 ];
 
 const BOOKMARK_TABS = [
-  {
-    id: 'Читаю',
-    label: 'Читаю',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 21 21" fill="none">
-        <path opacity="0.4" d="M18.5938 8.00622C16.5725 4.82997 13.615 3.00122 10.5 3.00122C8.9425 3.00122 7.42875 3.45622 6.04625 4.30497C4.66375 5.16247 3.42125 6.41372 2.40625 8.00622C1.53125 9.37997 1.53125 11.6112 2.40625 12.985C4.4275 16.17 7.385 17.99 10.5 17.99C12.0575 17.99 13.5712 17.535 14.9538 16.6862C16.3363 15.8287 17.5787 14.5775 18.5938 12.985C19.4688 11.62 19.4688 9.37997 18.5938 8.00622ZM10.5 14.035C8.54 14.035 6.965 12.4512 6.965 10.5C6.965 8.54872 8.54 6.96497 10.5 6.96497C12.46 6.96497 14.035 8.54872 14.035 10.5C14.035 12.4512 12.46 14.035 10.5 14.035Z" fill="#97989B"/>
-        <path d="M10.4996 7.99756C9.12586 7.99756 8.00586 9.11756 8.00586 10.5001C8.00586 11.8738 9.12586 12.9938 10.4996 12.9938C11.8734 12.9938 13.0021 11.8738 13.0021 10.5001C13.0021 9.12631 11.8734 7.99756 10.4996 7.99756Z" fill="#97989B"/>
-      </svg>
-    ),
-  },
-  {
-    id: 'Буду читать',
-    label: 'Буду читать',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 21 21" fill="none">
-        <path opacity="0.4" d="M10.5 19.25C15.3325 19.25 19.25 15.3325 19.25 10.5C19.25 5.66751 15.3325 1.75 10.5 1.75C5.66751 1.75 1.75 5.66751 1.75 10.5C1.75 15.3325 5.66751 19.25 10.5 19.25Z" fill="#97989B"/>
-        <path d="M13.7468 13.9388C13.633 13.9388 13.5193 13.9125 13.4143 13.8425L10.7018 12.2238C10.028 11.8213 9.5293 10.9375 9.5293 10.1588V6.57129C9.5293 6.21254 9.8268 5.91504 10.1855 5.91504C10.5443 5.91504 10.8418 6.21254 10.8418 6.57129V10.1588C10.8418 10.4738 11.1043 10.9375 11.3755 11.095L14.088 12.7138C14.403 12.8975 14.4993 13.3 14.3155 13.615C14.1843 13.825 13.9655 13.9388 13.7468 13.9388Z" fill="#97989B"/>
-      </svg>
-    ),
-  },
-  {
-    id: 'Брошено',
-    label: 'Брошено',
-    icon: (
-      <svg width="16" height="18" viewBox="0 0 18 21" fill="none">
-        <path opacity="0.4" d="M12.4163 1.75H5.08375C1.89875 1.75 0 3.64875 0 6.83375V14.1575C0 17.3513 1.89875 19.25 5.08375 19.25H12.4075C15.5925 19.25 17.4912 17.3513 17.4912 14.1663V6.83375C17.5 3.64875 15.6013 1.75 12.4163 1.75Z" fill="#97989B"/>
-        <path d="M9.67695 10.4999L11.6895 8.48744C11.9432 8.23369 11.9432 7.81369 11.6895 7.55994C11.4357 7.30619 11.0157 7.30619 10.762 7.55994L8.74945 9.57244L6.73695 7.55994C6.4832 7.30619 6.0632 7.30619 5.80945 7.55994C5.5557 7.81369 5.5557 8.23369 5.80945 8.48744L7.82195 10.4999L5.80945 12.5124C5.5557 12.7662 5.5557 13.1862 5.80945 13.4399C5.9407 13.5712 6.10695 13.6324 6.2732 13.6324C6.43945 13.6324 6.6057 13.5712 6.73695 13.4399L8.74945 11.4274L10.762 13.4399C10.8932 13.5712 11.0595 13.6324 11.2257 13.6324C11.392 13.6324 11.5582 13.5712 11.6895 13.4399C11.9432 13.1862 11.9432 12.7662 11.6895 12.5124L9.67695 10.4999Z" fill="#97989B"/>
-      </svg>
-    ),
-  },
-  {
-    id: 'Прочитано',
-    label: 'Прочитано',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path opacity="0.4" d="M21.6602 10.44L20.6802 14.62C19.8402 18.23 18.1802 19.69 15.0602 19.39C14.5602 19.35 14.0202 19.26 13.4402 19.12L11.7602 18.72C7.59018 17.73 6.30018 15.67 7.28018 11.49L8.26018 7.30001C8.46018 6.45001 8.70018 5.71001 9.00018 5.10001C10.1702 2.68001 12.1602 2.03001 15.5002 2.82001L17.1702 3.21001C21.3602 4.19001 22.6402 6.26001 21.6602 10.44Z" fill="#97989B"/>
-        <path d="M15.0603 19.3901C14.4403 19.8101 13.6603 20.1601 12.7103 20.4701L11.1303 20.9901C7.16034 22.2701 5.07034 21.2001 3.78034 17.2301L2.50034 13.2801C1.22034 9.3101 2.28034 7.2101 6.25034 5.9301L7.83034 5.4101C8.24034 5.2801 8.63034 5.1701 9.00034 5.1001C8.70034 5.7101 8.46034 6.4501 8.26034 7.3001L7.28034 11.4901C6.30034 15.6701 7.59034 17.7301 11.7603 18.7201L13.4403 19.1201C14.0203 19.2601 14.5603 19.3501 15.0603 19.3901Z" fill="#97989B"/>
-      </svg>
-    ),
-  },
-  {
-    id: 'Избранное',
-    label: 'Избранное',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 18 21" fill="none">
-        <path d="M18 7.16615C18 8.2074 17.829 9.1699 17.532 10.0624H0.468C0.171 9.1699 0 8.2074 0 7.16615C0 4.4624 2.241 2.2749 5.004 2.2749C6.633 2.2749 8.091 3.0449 9 4.22615C9.909 3.0449 11.367 2.2749 12.996 2.2749C15.759 2.2749 18 4.4624 18 7.16615Z" fill="#97989B"/>
-        <path opacity="0.4" d="M17.5308 10.0625C16.1088 14.4375 11.7258 17.0537 9.5568 17.7712C9.2508 17.8762 8.7468 17.8762 8.4408 17.7712C6.2718 17.0537 1.8888 14.4375 0.466797 10.0625H17.5308Z" fill="#97989B"/>
-      </svg>
-    ),
-  },
+  { id: 'Читаю',       label: 'Читаю',       color: '#562CF0' },
+  { id: 'Буду читать', label: 'Буду читать', color: '#3B82F6' },
+  { id: 'Прочитано',   label: 'Прочитано',   color: '#22C55E' },
+  { id: 'Брошено',     label: 'Брошено',     color: '#EF4444' },
+  { id: 'Избранное',   label: 'Избранное',   color: '#F59E0B' },
 ];
 
 const SOCIAL_LINKS = [
@@ -342,13 +297,24 @@ function PlusIcon() {
   );
 }
 
-const BOOKMARK_COLORS = ['#562cf0', '#d93025', '#28a745', '#c17900', '#0d6efd', '#e91e63'];
+const BOOKMARK_COLORS = ['#562CF0', '#3B82F6', '#22C55E', '#EF4444', '#F59E0B', '#e91e63'];
 
 /* ── Bookmark Edit Modal ── */
 function BookmarkEditModal({ onClose }: { onClose: () => void }) {
   const [inputValue, setInputValue] = useState('');
   const [selectedColor, setSelectedColor] = useState(BOOKMARK_COLORS[0]);
   const [custom, setCustom] = useState<{ id: string; label: string; color: string }[]>([]);
+  const [hiddenStandard, setHiddenStandard] = useState<string[]>([]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
 
   const addBookmark = () => {
     const name = inputValue.trim();
@@ -368,23 +334,30 @@ function BookmarkEditModal({ onClose }: { onClose: () => void }) {
           </button>
         </div>
         <div className="reader__bookmark-popup-list">
-          {BOOKMARK_TABS.map((opt, i) => (
-            <div
-              key={opt.id}
-              className={`reader__bookmark-popup-opt${i === 0 ? ' reader__bookmark-popup-opt--active' : ''}`}
-            >
-              <span className="reader__bookmark-popup-icon">{opt.icon}</span>
+          {BOOKMARK_TABS.filter(opt => !hiddenStandard.includes(opt.id)).map(opt => (
+            <div key={opt.id} className="reader__bookmark-popup-opt">
+              <span className="bookmark-dot" style={{ background: opt.color }} />
               {opt.label}
-              <span className="bookmark-edit-modal__drag"><DragIcon /></span>
+              <button
+                className="bookmark-edit-modal__delete"
+                aria-label="Удалить"
+                onClick={() => setHiddenStandard(prev => [...prev, opt.id])}
+              >
+                <CloseIcon />
+              </button>
             </div>
           ))}
           {custom.map(c => (
             <div key={c.id} className="reader__bookmark-popup-opt">
-              <span className="reader__bookmark-popup-icon">
-                <span style={{ display: 'inline-block', width: 16, height: 16, borderRadius: '50%', background: c.color, flexShrink: 0 }} />
-              </span>
+              <span className="bookmark-dot" style={{ background: c.color }} />
               {c.label}
-              <span className="bookmark-edit-modal__drag"><DragIcon /></span>
+              <button
+                className="bookmark-edit-modal__delete"
+                aria-label="Удалить"
+                onClick={() => setCustom(prev => prev.filter(x => x.id !== c.id))}
+              >
+                <CloseIcon />
+              </button>
             </div>
           ))}
         </div>
@@ -679,7 +652,7 @@ function ProfilePageInner() {
                           className={`profile-bookmarks__filter${activeBookmarkFilter === tab.id ? ' profile-bookmarks__filter--active' : ''}`}
                           onClick={() => setActiveBookmarkFilter(tab.id)}
                         >
-                          {tab.icon}
+                          <span className="bookmark-dot" style={{ background: tab.color }} />
                           {tab.label}
                         </button>
                       ))}
