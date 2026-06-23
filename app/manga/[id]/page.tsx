@@ -548,9 +548,18 @@ export default function MangaPage({ params }: { params: { id: string } }) {
   const [hoverRating, setHoverRating] = useState(0);
   const [reviewFilter, setReviewFilter] = useState<"all" | "positive" | "negative" | "neutral">("all");
   const bookmarkWrapRef = useRef<HTMLDivElement>(null);
+  const bookmarkBtnRef = useRef<HTMLButtonElement>(null);
+  const [dropdownBottom, setDropdownBottom] = useState<number | null>(null);
 
   useEffect(() => {
     if (!bookmarkDropdownOpen) return;
+    // На мобайле (≤768px) fixed-дропдаун, позиционируем над кнопкой
+    if (bookmarkBtnRef.current && window.innerWidth <= 768) {
+      const rect = bookmarkBtnRef.current.getBoundingClientRect();
+      setDropdownBottom(window.innerHeight - rect.top + 6);
+    } else {
+      setDropdownBottom(null);
+    }
     const handler = (e: MouseEvent) => {
       if (bookmarkWrapRef.current && !bookmarkWrapRef.current.contains(e.target as Node)) {
         setBookmarkDropdownOpen(false);
@@ -592,6 +601,7 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                     Читать
                   </Link>
                     <button
+                      ref={bookmarkBtnRef}
                       className="manga-inner__bookmark-btn"
                       onClick={() => setBookmarkDropdownOpen((v) => !v)}
                     >
@@ -599,7 +609,10 @@ export default function MangaPage({ params }: { params: { id: string } }) {
                       {bookmarkValue ?? "В закладки"}
                     </button>
                     {bookmarkDropdownOpen && (
-                      <div className="manga-inner__bookmark-dropdown">
+                      <div
+                        className="manga-inner__bookmark-dropdown"
+                        style={dropdownBottom !== null ? { bottom: dropdownBottom } : undefined}
+                      >
                         {BOOKMARK_OPTIONS.map((opt) => (
                           <button
                             key={opt.label}
