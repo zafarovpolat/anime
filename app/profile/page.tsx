@@ -602,7 +602,7 @@ function ProfilePageInner() {
   const [gender, setGender] = useState('Мужской');
   const [bookmarkEditOpen, setBookmarkEditOpen] = useState(false);
   const [sortOpen, setSortOpen] = useState(false);
-  const [sortLabel, setSortLabel] = useState('По добавлению');
+  const [sortLabel, setSortLabel] = useState('По добавлению ↓');
   const [customizeOpen, setCustomizeOpen] = useState(false);
   const [commentMenuOpen, setCommentMenuOpen] = useState<number | null>(null);
   const [showOldPwd, setShowOldPwd] = useState(false);
@@ -751,7 +751,14 @@ function ProfilePageInner() {
                           <>
                             <div style={{ position: 'fixed', inset: 0, zIndex: 10 }} onClick={() => setSortOpen(false)} />
                             <ul className="catalog-sort-dropdown" role="listbox">
-                              {['По добавлению', 'По обновлению', 'По названию'].map(opt => (
+                              {[
+                                'По добавлению ↓',
+                                'По добавлению ↑',
+                                'По обновлению ↓',
+                                'По обновлению ↑',
+                                'По названию А-Я',
+                                'По названию Я-А',
+                              ].map(opt => (
                                 <li
                                   key={opt}
                                   className={`catalog-sort-option${sortLabel === opt ? ' catalog-sort-option--active' : ''}`}
