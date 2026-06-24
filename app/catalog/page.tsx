@@ -193,7 +193,7 @@ function HomeIcon() {
 export default function CatalogPage() {
   const [sortOpen, setSortOpen] = useState(false);
   const [filterOpen, setFilterOpen] = useState(false);
-  const [sortLabel, setSortLabel] = useState("По популярности");
+  const [sortLabel, setSortLabel] = useState("По популярности ↓");
   const [genreSearch, setGenreSearch] = useState("");
   const [nameSearch, setNameSearch] = useState("");
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
@@ -231,10 +231,14 @@ export default function CatalogPage() {
   };
 
   const sortOptions = [
-    "По популярности",
-    "По рейтингу",
-    "По новизне",
-    "По алфавиту",
+    "По популярности ↓",
+    "По популярности ↑",
+    "По рейтингу ↓",
+    "По рейтингу ↑",
+    "По новизне ↓",
+    "По новизне ↑",
+    "По алфавиту А-Я",
+    "По алфавиту Я-А",
   ];
 
   const allCards = Array.from({ length: 12 }, (_, i) => ({
