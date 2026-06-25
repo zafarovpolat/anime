@@ -5280,7 +5280,7 @@ button {
   gap: 6px;
   font-size: 14px;
   font-weight: 400;
-  color: var(--color-primary);
+  color: var(--color-gray-text);
   background: none;
   border: none;
   cursor: pointer;
@@ -5289,7 +5289,7 @@ button {
 }
 
 .catalog-filter__reset:hover {
-  color: #3d1db0;
+  color: var(--color-primary);
 }
 
 /* Filter block (white card) */
