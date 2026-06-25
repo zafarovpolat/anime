@@ -6674,6 +6674,18 @@ button {
   background-repeat: no-repeat;
 }
 
+@media (max-width: 768px) {
+  .manga-main ~ .footer {
+    padding-bottom: 96px;
+  }
+}
+
+@media (max-width: 540px) {
+  .manga-main ~ .footer {
+    padding-bottom: 82px;
+  }
+}
+
 .manga-main::after {
   content: "";
   position: absolute;
