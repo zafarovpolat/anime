@@ -258,6 +258,16 @@ export default function CatalogPage() {
     if (yearFrom && card.year < parseInt(yearFrom)) return false;
     if (yearTo && card.year > parseInt(yearTo)) return false;
     return true;
+  }).sort((a, b) => {
+    switch (sortLabel) {
+      case 'По популярности ↓': case 'По рейтингу ↓': return b.rating - a.rating;
+      case 'По популярности ↑': case 'По рейтингу ↑': return a.rating - b.rating;
+      case 'По новизне ↓': return b.year - a.year;
+      case 'По новизне ↑': return a.year - b.year;
+      case 'По алфавиту А-Я': return a.title.localeCompare(b.title, 'ru');
+      case 'По алфавиту Я-А': return b.title.localeCompare(a.title, 'ru');
+      default: return 0;
+    }
   });
 
   const getPaginationPages = () => {
